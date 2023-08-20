@@ -48,7 +48,10 @@ namespace cvProject
         {
             get { return Responsibilities; }
 
-            set { this.Responsibilities = value; }
+            set 
+            { 
+                this.Responsibilities = value;
+            }
      
         }
     
