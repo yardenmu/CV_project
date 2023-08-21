@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace cvProject
 {
-    class PersonalInfo
+    class PersonalInfo : cvComponent
     {
         protected string FirstName, LastName, DateOfBirth, Email, Adrress;
         protected string id;

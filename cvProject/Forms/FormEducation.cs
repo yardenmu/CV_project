@@ -60,12 +60,12 @@ namespace cvProject.Forms
 
         private void delete_btn_Click(object sender, EventArgs e)
         {
-            if(Education_dv.Rows.Count != 1)
+            //                                       check if the the current selected row value is empty
+            if (Education_dv.Rows.Count > 0 && Education_dv.Rows[Education_dv.CurrentRow.Index].Cells[1].Value != null)
             {
-                index = Education_dv.CurrentCell.RowIndex;
+                index = Education_dv.CurrentRow.Index; //current selected index
                 Education_dv.Rows.RemoveAt(index);
-            }
-                
+            }    
         }
 
         private void modify_btn_Click(object sender, EventArgs e)
@@ -85,7 +85,6 @@ namespace cvProject.Forms
 
         }
 
-        
         private void Education_dv_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
             Education_dv.Rows[e.RowIndex].Cells[0].Value = e.RowIndex + 1;

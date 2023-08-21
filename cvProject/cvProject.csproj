@@ -52,6 +52,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="cvComponent.cs" />
+    <Compile Include="cvSections.cs" />
     <Compile Include="Education.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>

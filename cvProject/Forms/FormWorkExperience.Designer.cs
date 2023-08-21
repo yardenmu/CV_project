@@ -29,11 +29,11 @@ namespace cvProject.Forms
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.Education_dv = new System.Windows.Forms.DataGridView();
-            this.description_tb = new System.Windows.Forms.TextBox();
-            this.description_lb = new System.Windows.Forms.Label();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.WorkExp_dv = new System.Windows.Forms.DataGridView();
+            this.responsibilities_tb = new System.Windows.Forms.TextBox();
+            this.responsibilities_lb = new System.Windows.Forms.Label();
             this.startDate_lb = new System.Windows.Forms.Label();
             this.position_tb = new System.Windows.Forms.TextBox();
             this.position_lb = new System.Windows.Forms.Label();
@@ -42,71 +42,72 @@ namespace cvProject.Forms
             this.endDate_lb = new System.Windows.Forms.Label();
             this.endDate_time = new System.Windows.Forms.DateTimePicker();
             this.startDate_time = new System.Windows.Forms.DateTimePicker();
+            this.delete_btn = new System.Windows.Forms.Button();
+            this.modify_btn = new System.Windows.Forms.Button();
+            this.add_btn = new System.Windows.Forms.Button();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.delete_btn = new System.Windows.Forms.Button();
-            this.update_btn = new System.Windows.Forms.Button();
-            this.add_btn = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.Education_dv)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.WorkExp_dv)).BeginInit();
             this.SuspendLayout();
             // 
-            // Education_dv
+            // WorkExp_dv
             // 
-            this.Education_dv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Education_dv.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.Education_dv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.Education_dv.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.WorkExp_dv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.WorkExp_dv.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.WorkExp_dv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.WorkExp_dv.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column5,
             this.Column1,
             this.Column2,
             this.Column3,
-            this.Column4,
-            this.Column5});
-            this.Education_dv.Location = new System.Drawing.Point(58, 308);
-            this.Education_dv.Name = "Education_dv";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.Education_dv.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            this.Education_dv.RowHeadersWidth = 62;
-            this.Education_dv.RowTemplate.Height = 28;
-            this.Education_dv.Size = new System.Drawing.Size(832, 129);
-            this.Education_dv.TabIndex = 21;
+            this.Column4});
+            this.WorkExp_dv.Location = new System.Drawing.Point(58, 308);
+            this.WorkExp_dv.Name = "WorkExp_dv";
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.WorkExp_dv.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.WorkExp_dv.RowHeadersWidth = 62;
+            this.WorkExp_dv.RowTemplate.Height = 28;
+            this.WorkExp_dv.Size = new System.Drawing.Size(832, 129);
+            this.WorkExp_dv.TabIndex = 21;
+            this.WorkExp_dv.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.WorkExp_dv_CellFormatting);
             // 
-            // description_tb
+            // responsibilities_tb
             // 
-            this.description_tb.BackColor = System.Drawing.Color.LightGray;
-            this.description_tb.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.description_tb.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.description_tb.Location = new System.Drawing.Point(363, 163);
-            this.description_tb.Multiline = true;
-            this.description_tb.Name = "description_tb";
-            this.description_tb.Size = new System.Drawing.Size(527, 107);
-            this.description_tb.TabIndex = 20;
+            this.responsibilities_tb.BackColor = System.Drawing.Color.LightGray;
+            this.responsibilities_tb.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.responsibilities_tb.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.responsibilities_tb.Location = new System.Drawing.Point(363, 163);
+            this.responsibilities_tb.Multiline = true;
+            this.responsibilities_tb.Name = "responsibilities_tb";
+            this.responsibilities_tb.Size = new System.Drawing.Size(527, 107);
+            this.responsibilities_tb.TabIndex = 20;
             // 
-            // description_lb
+            // responsibilities_lb
             // 
-            this.description_lb.AutoSize = true;
-            this.description_lb.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.description_lb.ForeColor = System.Drawing.Color.Gray;
-            this.description_lb.Location = new System.Drawing.Point(359, 138);
-            this.description_lb.Name = "description_lb";
-            this.description_lb.Size = new System.Drawing.Size(119, 23);
-            this.description_lb.TabIndex = 19;
-            this.description_lb.Text = "Description";
+            this.responsibilities_lb.AutoSize = true;
+            this.responsibilities_lb.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.responsibilities_lb.ForeColor = System.Drawing.Color.Gray;
+            this.responsibilities_lb.Location = new System.Drawing.Point(359, 138);
+            this.responsibilities_lb.Name = "responsibilities_lb";
+            this.responsibilities_lb.Size = new System.Drawing.Size(157, 23);
+            this.responsibilities_lb.TabIndex = 19;
+            this.responsibilities_lb.Text = "Responsibilities";
             // 
             // startDate_lb
             // 
@@ -190,36 +191,6 @@ namespace cvProject.Forms
             this.startDate_time.Size = new System.Drawing.Size(200, 26);
             this.startDate_time.TabIndex = 24;
             // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Company";
-            this.Column1.MinimumWidth = 8;
-            this.Column1.Name = "Column1";
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Position";
-            this.Column2.MinimumWidth = 8;
-            this.Column2.Name = "Column2";
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Start Date";
-            this.Column3.MinimumWidth = 8;
-            this.Column3.Name = "Column3";
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "End Date";
-            this.Column4.MinimumWidth = 8;
-            this.Column4.Name = "Column4";
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "Description";
-            this.Column5.MinimumWidth = 8;
-            this.Column5.Name = "Column5";
-            // 
             // delete_btn
             // 
             this.delete_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(185)))), ((int)(((byte)(223)))));
@@ -233,20 +204,22 @@ namespace cvProject.Forms
             this.delete_btn.TabIndex = 27;
             this.delete_btn.Text = "Delete";
             this.delete_btn.UseVisualStyleBackColor = false;
+            this.delete_btn.Click += new System.EventHandler(this.delete_btn_Click);
             // 
-            // update_btn
+            // modify_btn
             // 
-            this.update_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(185)))), ((int)(((byte)(223)))));
-            this.update_btn.FlatAppearance.BorderSize = 0;
-            this.update_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.update_btn.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.update_btn.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.update_btn.Location = new System.Drawing.Point(401, 485);
-            this.update_btn.Name = "update_btn";
-            this.update_btn.Size = new System.Drawing.Size(147, 45);
-            this.update_btn.TabIndex = 26;
-            this.update_btn.Text = "Update";
-            this.update_btn.UseVisualStyleBackColor = false;
+            this.modify_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(185)))), ((int)(((byte)(223)))));
+            this.modify_btn.FlatAppearance.BorderSize = 0;
+            this.modify_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.modify_btn.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.modify_btn.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.modify_btn.Location = new System.Drawing.Point(401, 485);
+            this.modify_btn.Name = "modify_btn";
+            this.modify_btn.Size = new System.Drawing.Size(147, 45);
+            this.modify_btn.TabIndex = 26;
+            this.modify_btn.Text = "Modify";
+            this.modify_btn.UseVisualStyleBackColor = false;
+            this.modify_btn.Click += new System.EventHandler(this.modify_btn_Click);
             // 
             // add_btn
             // 
@@ -261,6 +234,39 @@ namespace cvProject.Forms
             this.add_btn.TabIndex = 25;
             this.add_btn.Text = "Add";
             this.add_btn.UseVisualStyleBackColor = false;
+            this.add_btn.Click += new System.EventHandler(this.add_btn_Click);
+            // 
+            // Column5
+            // 
+            this.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.Column5.HeaderText = "#";
+            this.Column5.MinimumWidth = 8;
+            this.Column5.Name = "Column5";
+            this.Column5.Width = 60;
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Company";
+            this.Column1.MinimumWidth = 8;
+            this.Column1.Name = "Column1";
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Position";
+            this.Column2.MinimumWidth = 8;
+            this.Column2.Name = "Column2";
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Duration";
+            this.Column3.MinimumWidth = 8;
+            this.Column3.Name = "Column3";
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Responsibilities";
+            this.Column4.MinimumWidth = 8;
+            this.Column4.Name = "Column4";
             // 
             // FormWorkExperience
             // 
@@ -268,14 +274,14 @@ namespace cvProject.Forms
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(957, 567);
             this.Controls.Add(this.delete_btn);
-            this.Controls.Add(this.update_btn);
+            this.Controls.Add(this.modify_btn);
             this.Controls.Add(this.add_btn);
             this.Controls.Add(this.startDate_time);
             this.Controls.Add(this.endDate_time);
             this.Controls.Add(this.endDate_lb);
-            this.Controls.Add(this.Education_dv);
-            this.Controls.Add(this.description_tb);
-            this.Controls.Add(this.description_lb);
+            this.Controls.Add(this.WorkExp_dv);
+            this.Controls.Add(this.responsibilities_tb);
+            this.Controls.Add(this.responsibilities_lb);
             this.Controls.Add(this.startDate_lb);
             this.Controls.Add(this.position_tb);
             this.Controls.Add(this.position_lb);
@@ -283,7 +289,7 @@ namespace cvProject.Forms
             this.Controls.Add(this.company_lb);
             this.Name = "FormWorkExperience";
             this.Text = "FormWorkExperience";
-            ((System.ComponentModel.ISupportInitialize)(this.Education_dv)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.WorkExp_dv)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -291,24 +297,24 @@ namespace cvProject.Forms
 
         #endregion
 
-        private System.Windows.Forms.DataGridView Education_dv;
-        private System.Windows.Forms.TextBox description_tb;
-        private System.Windows.Forms.Label description_lb;
+        private System.Windows.Forms.DataGridView WorkExp_dv;
+        private System.Windows.Forms.TextBox responsibilities_tb;
+        private System.Windows.Forms.Label responsibilities_lb;
         private System.Windows.Forms.Label startDate_lb;
         private System.Windows.Forms.TextBox position_tb;
         private System.Windows.Forms.Label position_lb;
         private System.Windows.Forms.TextBox company_tb;
         private System.Windows.Forms.Label company_lb;
         private System.Windows.Forms.Label endDate_lb;
+        private System.Windows.Forms.DateTimePicker endDate_time;
+        private System.Windows.Forms.DateTimePicker startDate_time;
+        private System.Windows.Forms.Button delete_btn;
+        private System.Windows.Forms.Button modify_btn;
+        private System.Windows.Forms.Button add_btn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DateTimePicker endDate_time;
-        private System.Windows.Forms.DateTimePicker startDate_time;
-        private System.Windows.Forms.Button delete_btn;
-        private System.Windows.Forms.Button update_btn;
-        private System.Windows.Forms.Button add_btn;
     }
 }

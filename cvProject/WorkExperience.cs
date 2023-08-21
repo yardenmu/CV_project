@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace cvProject
 {
-    class WorkExperience
+    class WorkExperience : cvSections
     {
-        protected string Company, Position, StartDate, EndDate, Responsibilities;
+        protected string Company, Position, StartDate, EndDate, Responsibilities, Duration;
         public WorkExperience()
         {
             Company = " ";
@@ -16,6 +16,7 @@ namespace cvProject
             StartDate = " ";
             EndDate = " ";
             Responsibilities = " ";
+            Duration = " ";
         }
         public string COMPANY
         {
@@ -54,6 +55,22 @@ namespace cvProject
             }
      
         }
-    
+        public string DURATION
+        {
+            get { return Duration; }
+
+            set { this.Duration = calculateDurationDate(); }
+        }
+
+        public string calculateDurationDate()
+        {
+            DateTime startDate = DateTime.ParseExact(StartDate, "dd-MM-yyyy", null); 
+            DateTime endDate = DateTime.ParseExact(EndDate, "dd-MM-yyyy", null); 
+            TimeSpan duration = endDate - startDate; 
+            int years = duration.Days / 365; 
+            int months = (duration.Days % 365) / 30;
+            return years + " years " + months + " month";
+        }
+
     }
 }

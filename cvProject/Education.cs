@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace cvProject
 {
-    class Education
+    class Education : cvSections
     {
         protected string institution, degree, major,description;
         protected string startDate, endDate;
