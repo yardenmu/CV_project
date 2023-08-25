@@ -14,11 +14,12 @@ namespace cvProject.Forms
     {
         Education education;
         int index;
+        cvSections cv = new cvSections();
 
         public FormEducation()
         {
             InitializeComponent();
-            education = new Education();
+      
         }
 
         private void add_btn_Click(object sender, EventArgs e)
@@ -36,14 +37,10 @@ namespace cvProject.Forms
                 && !string.IsNullOrWhiteSpace(major) && !string.IsNullOrWhiteSpace(description) &&
                 !string.IsNullOrWhiteSpace(startDate) && !string.IsNullOrWhiteSpace(EndDate))
             {
-                education.INSTITUTION = institution;
-                education.DEGREE = degree;
-                education.MAJOR = major;
-                education.DESCRIPTION = description;
-                education.STARTDATE = startDate;
-                education.ENDDATE = EndDate;
-             
+                education = new Education(institution, degree, major, description, startDate, EndDate);
+
                 Education_dv.Rows.Add(Education_dv.Rows.Count, education.INSTITUTION, education.DEGREE, education.MAJOR,education.STARTDATE, education.ENDDATE, education.DESCRIPTION);
+                cv.addEducation(education);
             }
             else
             {
@@ -65,6 +62,7 @@ namespace cvProject.Forms
             {
                 index = Education_dv.CurrentRow.Index; //current selected index
                 Education_dv.Rows.RemoveAt(index);
+                cv.RemoveEducation(education);
             }    
         }
 

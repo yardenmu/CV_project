@@ -10,7 +10,6 @@ namespace cvProject
     {
         protected string institution, degree, major,description;
         protected string startDate, endDate;
-
         public Education()
         {
             institution = "";
@@ -18,6 +17,16 @@ namespace cvProject
             major = "";
             startDate = "";
             endDate = "";
+        }
+        public Education(string institution, string degree, string major, string description, string startDate, string endDate)
+        {
+            INSTITUTION = institution;
+            DEGREE = degree;
+            MAJOR = major;
+            DESCRIPTION = description;
+            STARTDATE = startDate;
+            ENDDATE = endDate;
+
         }
         public string INSTITUTION
         {
@@ -61,5 +70,10 @@ namespace cvProject
             set { this.endDate = value; }
            
         }
+        
+        
+        
+        
+
     }
 }

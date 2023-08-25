@@ -18,6 +18,7 @@ namespace cvProject.Forms
             InitializeComponent();
             personal = new PersonalInfo();
         }
+        
         //load the user input to the members of class PersonalInfo
         private void save_btn_Click(object sender, EventArgs e)
         {

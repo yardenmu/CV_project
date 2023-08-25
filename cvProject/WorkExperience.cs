@@ -18,6 +18,16 @@ namespace cvProject
             Responsibilities = " ";
             Duration = " ";
         }
+        public WorkExperience(string Company, string Position, string StartDate, string EndDate,string Responsibilities,string Duration)
+        {
+            COMPANY = Company;
+            POSITION = Position;
+            STARTDATE = StartDate;
+            ENDDATE = EndDate;
+            RESPONSIBILITIES = Responsibilities;
+            DURATION = Duration;
+
+        }
         public string COMPANY
         {
             get { return Company; }

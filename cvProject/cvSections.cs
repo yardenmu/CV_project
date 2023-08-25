@@ -8,8 +8,9 @@ namespace cvProject
 {
     class cvSections : cvComponent
     {
-        protected List<Education> Educationslist;
-        protected List<WorkExperience> WorkExperienceslist;
+
+        private List<Education> Educationslist;
+        private List<WorkExperience> WorkExperienceslist;
         public cvSections()
         {
             Educationslist = new List<Education>();
@@ -26,7 +27,28 @@ namespace cvProject
             get { return WorkExperienceslist; }
             set { WorkExperienceslist = value; }
         }
- 
+        
+
+        public void addEducation(Education edu)
+        {
+            Educationslist.Add(edu);
+        }
+        public void RemoveEducation(Education edu)
+        {
+            Educationslist.Remove(edu);
+        }
+
+        public void addWorkExperiences(WorkExperience workExp)
+        {
+            WorkExperienceslist.Add(workExp);
+        }
+        public void RemoveWorkExperiences(WorkExperience workExp)
+        {
+            WorkExperienceslist.Remove(workExp);
+        }
+
+
+
     }
     
 }
