@@ -231,6 +231,27 @@
   <metadata name="timer1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <data name="pdf_pb.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        EwAACxMBAJqcGAAAA4VJREFUaEPtmE1o1EAUx1f8RvEbVBRr22yyrlaEiiehN/EgHhQFwZuI3kVvIngV
+        qdud7BIVt91JWsyhF6HqQXsR8QsERSmoSBWkevCgB9Gq9b3kzdq6i+lMJrtW9gePdPLe/PP+m0ySJtVk
+        JmHa7kQywa8Zudx8Okzy1G5CT6QZH2oplRbQoZJFHJSGWphixnaHs8xfTKnkSNYIHwvMMH5767nyIkon
+        Q5JGrAK3YPsW/07b/I6R40uoRD/ioDTUwmRNqziw0WT8VWCG8UeZfN/KoEg3SRtB2py+DTB+Ee7nj03H
+        W0Upffx5UB3U0syy0hqTuc+CHHOfZxy+llJ6qJcRpPVC/2pYK08wl2buSLrYu45S8amnESR7yV8Bt+SH
+        oRn+2uwpt1IqHvU2grR0l5ZB/l5Qx9xRIzfQTil1og6qwnQ02xx/KSz8u6EZ/mZT0UtTSo1GGUHwIQlr
+        5VZYz8cyhfIWSsmTpBHpYO57kpBHiNBQC1OakwySkCe2gCaaRgRxBfBFsNNx5tJQmYYZ6TozPAcebFfh
+        1vkdF2mm4HVSSomGGTFsvgvnwSvHOGkMUkoJ1T4qqArAnCPhXP4St/A8eEopJVT7qKAqYDJvZzCX8Z+4
+        xfcnSimh2kcFVYGs78+Ds/BJzId1coVSSqj2USGOAMzLi/lGvryfdisRp4+AOAJwRraJ+bHek4A4fQTE
+        EYD1cVDMx48LKd+fTSlp4vQREEcA1kUvzf+BW/hH6SSlpInTR4CqAH4OhcY/4l3LKngHwNQXfDjCvkNU
+        IkXDjEDDx4K5jN/HMTxPDqMpWDffII4atnsczxhccjegbhByp//2XUu1jwoqAnjrhSZHcZ6Rd/eki94O
+        aP4E/nMk9GoFmB8iiSpEDQ3lURGA+lM4B399aP6D0BAx6bVl6n7mviOJKkQNDeWRFcDbLDT0+0EIAeMR
+        MJSzCnwvfq8Kv2FxJzQ6qc52z5JMFaKGhvJMV8CwvS64nG7iOgib4uMQZSvft51KqsBPPyYr7wYD+8we
+        L0O7a5K4kfXn/YXwy3JRhwHX+lcr73ZQiRai+ogkSgCavixqRMAv3E1pbQhtGsoTJQCXz2dRgwFn5wGe
+        JUprI6qPSKIEYBFfFDVwJq53FLzllNJKVB+RRApMTMzCBd3O+jfTnkRI3kidaBoRNI1opmlE8N8Z+VeC
+        2pKnllgjg9pqMgNIpX4BlveBP5BDpIgAAAAASUVORK5CYII=
+</value>
+  </data>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>25</value>
   </metadata>

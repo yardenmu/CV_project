@@ -32,6 +32,11 @@ namespace cvProject.Forms
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.WorkExp_dv = new System.Windows.Forms.DataGridView();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.responsibilities_tb = new System.Windows.Forms.TextBox();
             this.responsibilities_lb = new System.Windows.Forms.Label();
             this.startDate_lb = new System.Windows.Forms.Label();
@@ -45,11 +50,6 @@ namespace cvProject.Forms
             this.delete_btn = new System.Windows.Forms.Button();
             this.modify_btn = new System.Windows.Forms.Button();
             this.add_btn = new System.Windows.Forms.Button();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.WorkExp_dv)).BeginInit();
             this.SuspendLayout();
             // 
@@ -86,6 +86,38 @@ namespace cvProject.Forms
             this.WorkExp_dv.Size = new System.Drawing.Size(832, 129);
             this.WorkExp_dv.TabIndex = 21;
             this.WorkExp_dv.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.WorkExp_dv_CellFormatting);
+            // 
+            // Column5
+            // 
+            this.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.Column5.HeaderText = "#";
+            this.Column5.MinimumWidth = 8;
+            this.Column5.Name = "Column5";
+            this.Column5.Width = 60;
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Company";
+            this.Column1.MinimumWidth = 8;
+            this.Column1.Name = "Column1";
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Position";
+            this.Column2.MinimumWidth = 8;
+            this.Column2.Name = "Column2";
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Duration";
+            this.Column3.MinimumWidth = 8;
+            this.Column3.Name = "Column3";
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Responsibilities";
+            this.Column4.MinimumWidth = 8;
+            this.Column4.Name = "Column4";
             // 
             // responsibilities_tb
             // 
@@ -198,7 +230,7 @@ namespace cvProject.Forms
             this.delete_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.delete_btn.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.delete_btn.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.delete_btn.Location = new System.Drawing.Point(683, 485);
+            this.delete_btn.Location = new System.Drawing.Point(689, 485);
             this.delete_btn.Name = "delete_btn";
             this.delete_btn.Size = new System.Drawing.Size(147, 45);
             this.delete_btn.TabIndex = 27;
@@ -213,7 +245,7 @@ namespace cvProject.Forms
             this.modify_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.modify_btn.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.modify_btn.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.modify_btn.Location = new System.Drawing.Point(401, 485);
+            this.modify_btn.Location = new System.Drawing.Point(402, 485);
             this.modify_btn.Name = "modify_btn";
             this.modify_btn.Size = new System.Drawing.Size(147, 45);
             this.modify_btn.TabIndex = 26;
@@ -228,45 +260,13 @@ namespace cvProject.Forms
             this.add_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.add_btn.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.add_btn.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.add_btn.Location = new System.Drawing.Point(119, 485);
+            this.add_btn.Location = new System.Drawing.Point(97, 485);
             this.add_btn.Name = "add_btn";
             this.add_btn.Size = new System.Drawing.Size(147, 45);
             this.add_btn.TabIndex = 25;
             this.add_btn.Text = "Add";
             this.add_btn.UseVisualStyleBackColor = false;
             this.add_btn.Click += new System.EventHandler(this.add_btn_Click);
-            // 
-            // Column5
-            // 
-            this.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.Column5.HeaderText = "#";
-            this.Column5.MinimumWidth = 8;
-            this.Column5.Name = "Column5";
-            this.Column5.Width = 60;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Company";
-            this.Column1.MinimumWidth = 8;
-            this.Column1.Name = "Column1";
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Position";
-            this.Column2.MinimumWidth = 8;
-            this.Column2.Name = "Column2";
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Duration";
-            this.Column3.MinimumWidth = 8;
-            this.Column3.Name = "Column3";
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Responsibilities";
-            this.Column4.MinimumWidth = 8;
-            this.Column4.Name = "Column4";
             // 
             // FormWorkExperience
             // 

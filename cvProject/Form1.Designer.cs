@@ -48,6 +48,7 @@ namespace cvProject
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.time_lbl = new System.Windows.Forms.Label();
             this.panelDesktop = new System.Windows.Forms.Panel();
+            this.pdf_pb = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -55,6 +56,7 @@ namespace cvProject
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pdf_pb)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -254,10 +256,21 @@ namespace cvProject
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelDesktop.AutoSize = true;
-            this.panelDesktop.Location = new System.Drawing.Point(256, 56);
+            this.panelDesktop.Location = new System.Drawing.Point(256, 69);
             this.panelDesktop.Name = "panelDesktop";
-            this.panelDesktop.Size = new System.Drawing.Size(919, 596);
+            this.panelDesktop.Size = new System.Drawing.Size(919, 583);
             this.panelDesktop.TabIndex = 2;
+            // 
+            // pdf_pb
+            // 
+            this.pdf_pb.Image = ((System.Drawing.Image)(resources.GetObject("pdf_pb.Image")));
+            this.pdf_pb.Location = new System.Drawing.Point(946, 12);
+            this.pdf_pb.Name = "pdf_pb";
+            this.pdf_pb.Size = new System.Drawing.Size(73, 51);
+            this.pdf_pb.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pdf_pb.TabIndex = 30;
+            this.pdf_pb.TabStop = false;
+            this.pdf_pb.Click += new System.EventHandler(this.pdf_pb_Click);
             // 
             // cvProject
             // 
@@ -265,6 +278,7 @@ namespace cvProject
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1175, 652);
+            this.Controls.Add(this.pdf_pb);
             this.Controls.Add(this.panelDesktop);
             this.Controls.Add(this.time_lbl);
             this.Controls.Add(this.panel1);
@@ -278,6 +292,7 @@ namespace cvProject
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pdf_pb)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -302,6 +317,7 @@ namespace cvProject
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Label time_lbl;
         private System.Windows.Forms.Panel panelDesktop;
+        private System.Windows.Forms.PictureBox pdf_pb;
     }
 }
 

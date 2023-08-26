@@ -8,47 +8,47 @@ namespace cvProject
 {
     class cvSections : cvComponent
     {
-
-        private List<Education> Educationslist;
-        private List<WorkExperience> WorkExperienceslist;
+        protected string startdate, enddate, index;
         public cvSections()
         {
-            Educationslist = new List<Education>();
-            WorkExperienceslist = new List<WorkExperience>();
+            startdate = "";
+            enddate = "";
+            index = "";
         }
-
-        public List<Education> EDUCATION
+        public cvSections(string startdate, string enddate, string index)
         {
-            get { return Educationslist; }
-            set { Educationslist = value; }
+            STARTDATE = startdate;
+            ENDDATE = enddate;
+            INDEX = index;
         }
-        public List<WorkExperience> WORKEXP
+        public virtual void addToList()
         {
-            get { return WorkExperienceslist; }
-            set { WorkExperienceslist = value; }
-        }
-        
 
-        public void addEducation(Education edu)
+        }
+        public virtual void RemoveItemFromList()
         {
-            Educationslist.Add(edu);
         }
-        public void RemoveEducation(Education edu)
+        public string STARTDATE
         {
-            Educationslist.Remove(edu);
-        }
+            get { return startdate; }
 
-        public void addWorkExperiences(WorkExperience workExp)
+            set { this.startdate = value; }
+
+        }
+        public string ENDDATE
         {
-            WorkExperienceslist.Add(workExp);
+            get { return enddate; }
+
+            set { this.enddate = value; }
+
         }
-        public void RemoveWorkExperiences(WorkExperience workExp)
+        public string INDEX
         {
-            WorkExperienceslist.Remove(workExp);
+            get { return index; }
+
+            set { this.index = value; }
+
         }
-
-
-
     }
-    
+
 }

@@ -18,35 +18,44 @@ namespace cvProject.Forms
         {
             InitializeComponent();
             workExp = new WorkExperience();
+            WorkExp_dv.ReadOnly = true;
         }
-
+        public void SetWorkExpList()
+        {
+            // Clear existing rows from the DataGridView
+            WorkExp_dv.Rows.Clear();
+            //Populate the DataGridView with data from the list
+            foreach (WorkExperience workexpe in Program.DataWorkExperinceList)
+            {
+                WorkExp_dv.Rows.Add(workexpe.INDEX, workexpe.COMPANY, workexpe.POSITION, workexpe.DURATION, workexpe.RESPONSIBILITIES);
+            }
+        }
         private void add_btn_Click(object sender, EventArgs e)
         {
-            string Company, Position, StartDate, EndDate, Responsibilities, Duration;
+            string index, Company, Position, StartDate, EndDate, Responsibilities, Duration;
             Company = company_tb.Text;
             Position = position_tb.Text;
-            StartDate = startDate_time.Value.ToString("dd-MM-yyyy"); 
+            StartDate = startDate_time.Value.ToString("dd-MM-yyyy");
             EndDate = endDate_time.Value.ToString("dd-MM-yyyy");
             Responsibilities = responsibilities_tb.Text;
             Duration = " ";
-           
-
-            if (!string.IsNullOrWhiteSpace(Company) && !string.IsNullOrWhiteSpace(Position)
+            if (Program.checkValidInputName(Company) && Program.checkValidInputName(Position)
                 && !string.IsNullOrWhiteSpace(Responsibilities))
             {
-                workExp.COMPANY = Company;
-                workExp.POSITION = Position;
-                workExp.STARTDATE = StartDate;
-                workExp.ENDDATE = EndDate;
-                workExp.RESPONSIBILITIES = Responsibilities;
-                workExp.DURATION = Duration;
+                index = WorkExp_dv.Rows.Count.ToString();
+                workExp = new WorkExperience(index, Company, Position, StartDate, EndDate, Responsibilities, Duration);
+                WorkExp_dv.Rows.Add(workExp.INDEX, workExp.COMPANY, workExp.POSITION, workExp.DURATION, workExp.RESPONSIBILITIES);
+                workExp.addToList();
 
-                WorkExp_dv.Rows.Add(WorkExp_dv.Rows.Count, workExp.COMPANY, workExp.POSITION, workExp.DURATION, workExp.RESPONSIBILITIES);
             }
             else
             {
                 MessageBox.Show("Invalid input");
             }
+            clearForm();
+        }
+        public void clearForm()
+        {
             company_tb.Clear();
             position_tb.Clear();
             responsibilities_tb.Clear();
@@ -56,19 +65,27 @@ namespace cvProject.Forms
         {
             if (WorkExp_dv.Rows.Count != 1)
             {
-                company_tb.Text = WorkExp_dv.Rows[index].Cells[1].Value.ToString();
-                position_tb.Text = WorkExp_dv.Rows[index].Cells[2].Value.ToString();
-                responsibilities_tb.Text = WorkExp_dv.Rows[index].Cells[4].Value.ToString();
+                insertToTextBox();
+                WorkExperience foundWe = Program.DataWorkExperinceList.Find(workExp => workExp.RESPONSIBILITIES == WorkExp_dv.Rows[index].Cells[4].Value.ToString());
+                foundWe.RemoveItemFromList();
                 WorkExp_dv.Rows.RemoveAt(index);
             }
         }
 
+        protected void insertToTextBox()
+        {
+            company_tb.Text = WorkExp_dv.Rows[index].Cells[1].Value.ToString();
+            position_tb.Text = WorkExp_dv.Rows[index].Cells[2].Value.ToString();
+            responsibilities_tb.Text = WorkExp_dv.Rows[index].Cells[4].Value.ToString();
+        }
         private void delete_btn_Click(object sender, EventArgs e)
         {
             //                                       check if the the current selected row value is empty
             if (WorkExp_dv.Rows.Count > 0 && WorkExp_dv.Rows[WorkExp_dv.CurrentRow.Index].Cells[1].Value != null)
             {
                 index = WorkExp_dv.CurrentRow.Index; //current selected index
+                WorkExperience foundWe = Program.DataWorkExperinceList.Find(workExp => workExp.RESPONSIBILITIES == WorkExp_dv.Rows[index].Cells[4].Value.ToString());
+                foundWe.RemoveItemFromList();
                 WorkExp_dv.Rows.RemoveAt(index);
             }
         }
@@ -77,5 +94,6 @@ namespace cvProject.Forms
         {
             WorkExp_dv.Rows[e.RowIndex].Cells[0].Value = e.RowIndex + 1;
         }
+
     }
 }

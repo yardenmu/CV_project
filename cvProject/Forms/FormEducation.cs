@@ -14,18 +14,25 @@ namespace cvProject.Forms
     {
         Education education;
         int index;
-        cvSections cv = new cvSections();
-
         public FormEducation()
         {
             InitializeComponent();
-      
+            Education_dv.ReadOnly = true;
         }
-
+        public void SetEducationList()
+        {
+            // Clear existing rows from the DataGridView
+            Education_dv.Rows.Clear();
+            //Populate the DataGridView with data from the list
+            foreach (Education education in Program.DataEducationList)
+            {
+                Education_dv.Rows.Add(education.INDEX, education.INSTITUTION, education.DEGREE, education.MAJOR, education.STARTDATE, education.ENDDATE, education.DESCRIPTION);
+            }
+        }
         private void add_btn_Click(object sender, EventArgs e)
         {
             string institution, degree, major, description;
-            string startDate, EndDate;
+            string startDate, EndDate, index;
             institution = institution_tb.Text;
             degree = degree_tb.Text;
             major = major_tb.Text;
@@ -33,56 +40,63 @@ namespace cvProject.Forms
             startDate = startDate_tb.Text;
             EndDate = endDate_tb.Text;
 
-            if (!string.IsNullOrWhiteSpace(institution) && !string.IsNullOrWhiteSpace(degree)
-                && !string.IsNullOrWhiteSpace(major) && !string.IsNullOrWhiteSpace(description) &&
-                !string.IsNullOrWhiteSpace(startDate) && !string.IsNullOrWhiteSpace(EndDate))
+            if (Program.checkValidInputName(institution) && Program.checkValidInputName(degree)
+                && Program.checkValidInputName(major) && !string.IsNullOrWhiteSpace(description) &&
+               Program.checkValidInputNumeric(startDate) && Program.checkValidInputNumeric(EndDate)) // change to function get object(template)
             {
-                education = new Education(institution, degree, major, description, startDate, EndDate);
-
-                Education_dv.Rows.Add(Education_dv.Rows.Count, education.INSTITUTION, education.DEGREE, education.MAJOR,education.STARTDATE, education.ENDDATE, education.DESCRIPTION);
-                cv.addEducation(education);
+                index = Education_dv.Rows.Count.ToString();
+                education = new Education(institution, degree, major, description, startDate, EndDate, index);
+                Education_dv.Rows.Add(Education_dv.Rows.Count, education.INSTITUTION, education.DEGREE, education.MAJOR, education.STARTDATE, education.ENDDATE, education.DESCRIPTION);
+                education.addToList();
             }
             else
             {
                 MessageBox.Show("Invalid input");
             }
+            clearForm();
+        }
+        public void clearForm()
+        {
             institution_tb.Clear();
             degree_tb.Clear();
             major_tb.Clear();
             description_tb.Clear();
             startDate_tb.Clear();
             endDate_tb.Clear();
-
         }
-
         private void delete_btn_Click(object sender, EventArgs e)
         {
             //                                       check if the the current selected row value is empty
             if (Education_dv.Rows.Count > 0 && Education_dv.Rows[Education_dv.CurrentRow.Index].Cells[1].Value != null)
             {
                 index = Education_dv.CurrentRow.Index; //current selected index
+                Education foundEducation = Program.DataEducationList.Find(education => education.DESCRIPTION == Education_dv.Rows[index].Cells[6].Value.ToString());
+                foundEducation.RemoveItemFromList();
                 Education_dv.Rows.RemoveAt(index);
-                cv.RemoveEducation(education);
-            }    
+            }
         }
 
         private void modify_btn_Click(object sender, EventArgs e)
         {
-            if(Education_dv.Rows.Count != 1)
+            if (Education_dv.Rows.Count != 1)
             {
-
-                institution_tb.Text = Education_dv.Rows[index].Cells[1].Value.ToString();
-                degree_tb.Text = Education_dv.Rows[index].Cells[2].Value.ToString();
-                major_tb.Text = Education_dv.Rows[index].Cells[3].Value.ToString();
-                startDate_tb.Text = Education_dv.Rows[index].Cells[4].Value.ToString();
-                endDate_tb.Text = Education_dv.Rows[index].Cells[5].Value.ToString();
-                description_tb.Text = Education_dv.Rows[index].Cells[6].Value.ToString();
+                insertInfoToTextBox();
+                Education foundEducation = Program.DataEducationList.Find(education => education.DESCRIPTION == description_tb.Text.ToString());
+                foundEducation.RemoveItemFromList();
                 Education_dv.Rows.RemoveAt(index);
-                
             }
 
         }
+        protected void insertInfoToTextBox()
+        {
+            institution_tb.Text = Education_dv.Rows[index].Cells[1].Value.ToString();
+            degree_tb.Text = Education_dv.Rows[index].Cells[2].Value.ToString();
+            major_tb.Text = Education_dv.Rows[index].Cells[3].Value.ToString();
+            startDate_tb.Text = Education_dv.Rows[index].Cells[4].Value.ToString();
+            endDate_tb.Text = Education_dv.Rows[index].Cells[5].Value.ToString();
+            description_tb.Text = Education_dv.Rows[index].Cells[6].Value.ToString();
 
+        }
         private void Education_dv_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
             Education_dv.Rows[e.RowIndex].Cells[0].Value = e.RowIndex + 1;

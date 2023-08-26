@@ -8,72 +8,56 @@ namespace cvProject
 {
     class Education : cvSections
     {
-        protected string institution, degree, major,description;
-        protected string startDate, endDate;
-        public Education()
+        protected string institution, degree, major, description; //polymorphisem
+        public Education() : base()
         {
             institution = "";
             degree = "";
             major = "";
-            startDate = "";
-            endDate = "";
         }
-        public Education(string institution, string degree, string major, string description, string startDate, string endDate)
+        public Education(string institution, string degree, string major, string description, string startdate, string enddate, string index) : base(startdate, enddate, index)
         {
             INSTITUTION = institution;
             DEGREE = degree;
             MAJOR = major;
             DESCRIPTION = description;
-            STARTDATE = startDate;
-            ENDDATE = endDate;
-
+        }
+        public override void addToList()
+        {
+            Program.DataEducationList.Add(this);
+        }
+        public override void RemoveItemFromList()
+        {
+            Program.DataEducationList.Remove(this);
         }
         public string INSTITUTION
         {
             get { return institution; }
-           
+
             set { this.institution = value; }
-          
+
         }
         public string DEGREE
         {
             get { return degree; }
-          
+
             set { this.degree = value; }
-           
+
         }
         public string MAJOR
         {
             get { return major; }
-         
+
             set { this.major = value; }
-          
+
         }
         public string DESCRIPTION
         {
             get { return description; }
-         
+
             set { this.description = value; }
-          
+
         }
-        public string STARTDATE
-        {
-            get { return startDate; }
-          
-            set { this.startDate = value; }
-          
-        }
-        public string ENDDATE
-        {
-            get { return endDate; }
-          
-            set { this.endDate = value; }
-           
-        }
-        
-        
-        
-        
 
     }
 }

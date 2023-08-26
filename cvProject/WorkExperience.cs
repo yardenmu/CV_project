@@ -8,22 +8,18 @@ namespace cvProject
 {
     class WorkExperience : cvSections
     {
-        protected string Company, Position, StartDate, EndDate, Responsibilities, Duration;
-        public WorkExperience()
+        protected string Company, Position, Responsibilities, Duration;
+        public WorkExperience() : base()
         {
             Company = " ";
             Position = " ";
-            StartDate = " ";
-            EndDate = " ";
             Responsibilities = " ";
             Duration = " ";
         }
-        public WorkExperience(string Company, string Position, string StartDate, string EndDate,string Responsibilities,string Duration)
+        public WorkExperience(string index, string Company, string Position, string startdate, string enddate, string Responsibilities, string Duration) : base(startdate, enddate, index)
         {
             COMPANY = Company;
             POSITION = Position;
-            STARTDATE = StartDate;
-            ENDDATE = EndDate;
             RESPONSIBILITIES = Responsibilities;
             DURATION = Duration;
 
@@ -31,39 +27,25 @@ namespace cvProject
         public string COMPANY
         {
             get { return Company; }
-         
+
             set { this.Company = value; }
         }
         public string POSITION
         {
             get { return Position; }
-           
+
             set { this.Position = value; }
-          
-        }
-        public string STARTDATE
-        {
-            get { return StartDate; }
-          
-            set { this.StartDate = value; }
-          
-        }
-        public string ENDDATE
-        {
-            get { return EndDate; }
-           
-            set { this.EndDate = value; }
-           
+
         }
         public string RESPONSIBILITIES
         {
             get { return Responsibilities; }
 
-            set 
-            { 
+            set
+            {
                 this.Responsibilities = value;
             }
-     
+
         }
         public string DURATION
         {
@@ -74,13 +56,20 @@ namespace cvProject
 
         public string calculateDurationDate()
         {
-            DateTime startDate = DateTime.ParseExact(StartDate, "dd-MM-yyyy", null); 
-            DateTime endDate = DateTime.ParseExact(EndDate, "dd-MM-yyyy", null); 
-            TimeSpan duration = endDate - startDate; 
-            int years = duration.Days / 365; 
+            DateTime startDate = DateTime.ParseExact(startdate, "dd-MM-yyyy", null);
+            DateTime endDate = DateTime.ParseExact(enddate, "dd-MM-yyyy", null);
+            TimeSpan duration = endDate - startDate;
+            int years = duration.Days / 365;
             int months = (duration.Days % 365) / 30;
             return years + " years " + months + " month";
         }
-
+        public override void addToList()
+        {
+            Program.DataWorkExperinceList.Add(this);
+        }
+        public override void RemoveItemFromList()
+        {
+            Program.DataWorkExperinceList.Remove(this);
+        }
     }
 }

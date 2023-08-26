@@ -38,7 +38,7 @@ namespace cvProject.Forms
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label4 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.load_btn = new System.Windows.Forms.Button();
             this.address_tb = new System.Windows.Forms.TextBox();
             this.address_lb = new System.Windows.Forms.Label();
             this.id_tb = new System.Windows.Forms.TextBox();
@@ -141,19 +141,20 @@ namespace cvProject.Forms
             this.pictureBox1.TabIndex = 8;
             this.pictureBox1.TabStop = false;
             // 
-            // button1
+            // load_btn
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(185)))), ((int)(((byte)(223)))));
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button1.Location = new System.Drawing.Point(584, 388);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(147, 45);
-            this.button1.TabIndex = 9;
-            this.button1.Text = "Load Picture";
-            this.button1.UseVisualStyleBackColor = false;
+            this.load_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(185)))), ((int)(((byte)(223)))));
+            this.load_btn.FlatAppearance.BorderSize = 0;
+            this.load_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.load_btn.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.load_btn.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.load_btn.Location = new System.Drawing.Point(584, 388);
+            this.load_btn.Name = "load_btn";
+            this.load_btn.Size = new System.Drawing.Size(147, 45);
+            this.load_btn.TabIndex = 9;
+            this.load_btn.Text = "Load Picture";
+            this.load_btn.UseVisualStyleBackColor = false;
+            this.load_btn.Click += new System.EventHandler(this.load_btn_Click);
             // 
             // address_tb
             // 
@@ -224,7 +225,7 @@ namespace cvProject.Forms
             this.Controls.Add(this.id_lb);
             this.Controls.Add(this.address_tb);
             this.Controls.Add(this.address_lb);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.load_btn);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.dateTimePicker1);
@@ -254,7 +255,7 @@ namespace cvProject.Forms
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button load_btn;
         private System.Windows.Forms.TextBox address_tb;
         private System.Windows.Forms.Label address_lb;
         private System.Windows.Forms.TextBox id_tb;
