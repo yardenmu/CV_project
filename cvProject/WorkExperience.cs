@@ -15,6 +15,7 @@ namespace cvProject
             Position = " ";
             Responsibilities = " ";
             Duration = " ";
+            SetTitleAndOrder("Work Experience", 3);
         }
         public WorkExperience(string index, string Company, string Position, string startdate, string enddate, string Responsibilities, string Duration) : base(startdate, enddate, index)
         {
@@ -22,7 +23,7 @@ namespace cvProject
             POSITION = Position;
             RESPONSIBILITIES = Responsibilities;
             DURATION = Duration;
-
+            SetTitleAndOrder("Work Experience", 3);
         }
         public string COMPANY
         {
@@ -41,11 +42,7 @@ namespace cvProject
         {
             get { return Responsibilities; }
 
-            set
-            {
-                this.Responsibilities = value;
-            }
-
+            set { this.Responsibilities = value; }     
         }
         public string DURATION
         {

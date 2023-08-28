@@ -65,8 +65,10 @@ namespace cvProject.Forms
         {
             if (WorkExp_dv.Rows.Count != 1)
             {
+                //polymorphism
+                
                 insertToTextBox();
-                WorkExperience foundWe = Program.DataWorkExperinceList.Find(workExp => workExp.RESPONSIBILITIES == WorkExp_dv.Rows[index].Cells[4].Value.ToString());
+                cvSections foundWe = Program.DataWorkExperinceList.Find(workExp => workExp.RESPONSIBILITIES == WorkExp_dv.Rows[index].Cells[4].Value.ToString());
                 foundWe.RemoveItemFromList();
                 WorkExp_dv.Rows.RemoveAt(index);
             }

@@ -9,10 +9,10 @@ namespace cvProject
 {
     class cvComponent
     {
-        string Title;
-        int DisplayOrder;
-        ColorDialog colorDialog = new ColorDialog();
-
+        protected string Title;
+        protected int DisplayOrder;
+        protected static List<cvComponent> cvList = new List<cvComponent>();
+      
         public cvComponent()
         {
             Title = " ";
@@ -20,10 +20,10 @@ namespace cvProject
         }
         public cvComponent(string title, int index)
         {
-            Title = " ";
-            DisplayOrder = 1;
+            TITLE = title;
+            DISPLAYTORDER = index;
         }
-
+       
         public string TITLE
         {
             get { return Title; }

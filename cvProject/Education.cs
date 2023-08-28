@@ -8,12 +8,13 @@ namespace cvProject
 {
     class Education : cvSections
     {
-        protected string institution, degree, major, description; //polymorphisem
-        public Education() : base()
+        protected string institution, degree, major, description; 
+        public Education() 
         {
             institution = "";
             degree = "";
             major = "";
+            SetTitleAndOrder("Education", 2);
         }
         public Education(string institution, string degree, string major, string description, string startdate, string enddate, string index) : base(startdate, enddate, index)
         {
@@ -21,6 +22,7 @@ namespace cvProject
             DEGREE = degree;
             MAJOR = major;
             DESCRIPTION = description;
+            SetTitleAndOrder("Education", 2);
         }
         public override void addToList()
         {

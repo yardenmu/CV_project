@@ -44,6 +44,8 @@ namespace cvProject.Forms
             this.id_tb = new System.Windows.Forms.TextBox();
             this.id_lb = new System.Windows.Forms.Label();
             this.save_btn = new System.Windows.Forms.Button();
+            this.phone_tb = new System.Windows.Forms.TextBox();
+            this.phone_lb = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -96,7 +98,7 @@ namespace cvProject.Forms
             this.Email_tb.BackColor = System.Drawing.Color.LightGray;
             this.Email_tb.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Email_tb.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Email_tb.Location = new System.Drawing.Point(490, 77);
+            this.Email_tb.Location = new System.Drawing.Point(490, 180);
             this.Email_tb.Multiline = true;
             this.Email_tb.Name = "Email_tb";
             this.Email_tb.Size = new System.Drawing.Size(340, 39);
@@ -107,7 +109,7 @@ namespace cvProject.Forms
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Gray;
-            this.label3.Location = new System.Drawing.Point(486, 52);
+            this.label3.Location = new System.Drawing.Point(486, 155);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(62, 23);
             this.label3.TabIndex = 4;
@@ -135,9 +137,9 @@ namespace cvProject.Forms
             // pictureBox1
             // 
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.Location = new System.Drawing.Point(549, 155);
+            this.pictureBox1.Location = new System.Drawing.Point(532, 243);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(216, 205);
+            this.pictureBox1.Size = new System.Drawing.Size(215, 151);
             this.pictureBox1.TabIndex = 8;
             this.pictureBox1.TabStop = false;
             // 
@@ -148,7 +150,7 @@ namespace cvProject.Forms
             this.load_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.load_btn.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.load_btn.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.load_btn.Location = new System.Drawing.Point(584, 388);
+            this.load_btn.Location = new System.Drawing.Point(562, 422);
             this.load_btn.Name = "load_btn";
             this.load_btn.Size = new System.Drawing.Size(147, 45);
             this.load_btn.TabIndex = 9;
@@ -215,11 +217,35 @@ namespace cvProject.Forms
             this.save_btn.UseVisualStyleBackColor = false;
             this.save_btn.Click += new System.EventHandler(this.save_btn_Click);
             // 
+            // phone_tb
+            // 
+            this.phone_tb.BackColor = System.Drawing.Color.LightGray;
+            this.phone_tb.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.phone_tb.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.phone_tb.Location = new System.Drawing.Point(490, 77);
+            this.phone_tb.Multiline = true;
+            this.phone_tb.Name = "phone_tb";
+            this.phone_tb.Size = new System.Drawing.Size(216, 39);
+            this.phone_tb.TabIndex = 16;
+            // 
+            // phone_lb
+            // 
+            this.phone_lb.AutoSize = true;
+            this.phone_lb.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.phone_lb.ForeColor = System.Drawing.Color.Gray;
+            this.phone_lb.Location = new System.Drawing.Point(486, 52);
+            this.phone_lb.Name = "phone_lb";
+            this.phone_lb.Size = new System.Drawing.Size(71, 23);
+            this.phone_lb.TabIndex = 15;
+            this.phone_lb.Text = "Phone";
+            // 
             // FormPersonal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(957, 567);
+            this.Controls.Add(this.phone_tb);
+            this.Controls.Add(this.phone_lb);
             this.Controls.Add(this.save_btn);
             this.Controls.Add(this.id_tb);
             this.Controls.Add(this.id_lb);
@@ -261,5 +287,7 @@ namespace cvProject.Forms
         private System.Windows.Forms.TextBox id_tb;
         private System.Windows.Forms.Label id_lb;
         private System.Windows.Forms.Button save_btn;
+        private System.Windows.Forms.TextBox phone_tb;
+        private System.Windows.Forms.Label phone_lb;
     }
 }

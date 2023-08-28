@@ -10,20 +10,24 @@ namespace cvProject
     static class Program
     {
         public static List<Education> DataEducationList = new List<Education>();
-        public static List<WorkExperience> DataWorkExperinceList = new List<WorkExperience>();
+        public static List<WorkExperience> DataWorkExperinceList = new List<WorkExperience>();       
         public static PersonalInfo per = new PersonalInfo();
         public static Boolean checkValidInputName(string str)
         {
-            if (!string.IsNullOrWhiteSpace(str) && (str.All(char.IsLetter)))
+            if (!string.IsNullOrEmpty(str))
             {
+                foreach(char i in str)
+                {
+                    if (!char.IsLetter(i) && i != ' ')
+                        return false;
+                }
                 return true;
             }
-            return false; //Major -> letters
-            //start date ->numbers description
+            return false;           
         }
         public static Boolean checkValidInputNumeric(string str)
         {
-            if (!string.IsNullOrWhiteSpace(str) && (str.All(char.IsDigit)))
+            if (!string.IsNullOrEmpty(str) && (str.All(char.IsDigit)))
             {
                 return true;
             }

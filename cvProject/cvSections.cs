@@ -6,10 +6,11 @@ using System.Threading.Tasks;
 
 namespace cvProject
 {
+    
     class cvSections : cvComponent
-    {
+    {        
         protected string startdate, enddate, index;
-        public cvSections()
+        public cvSections() :base()
         {
             startdate = "";
             enddate = "";
@@ -21,13 +22,17 @@ namespace cvProject
             ENDDATE = enddate;
             INDEX = index;
         }
-        public virtual void addToList()
-        {
+        public virtual void addToList() { }
 
-        }
-        public virtual void RemoveItemFromList()
+        public virtual void RemoveItemFromList() { }
+
+        protected void SetTitleAndOrder(string title, int order)
         {
+            base.Title = title;
+            base.DisplayOrder = order;          
         }
+       
+        //properties
         public string STARTDATE
         {
             get { return startdate; }

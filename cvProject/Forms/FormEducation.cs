@@ -48,6 +48,7 @@ namespace cvProject.Forms
                 education = new Education(institution, degree, major, description, startDate, EndDate, index);
                 Education_dv.Rows.Add(Education_dv.Rows.Count, education.INSTITUTION, education.DEGREE, education.MAJOR, education.STARTDATE, education.ENDDATE, education.DESCRIPTION);
                 education.addToList();
+
             }
             else
             {
@@ -70,9 +71,12 @@ namespace cvProject.Forms
             if (Education_dv.Rows.Count > 0 && Education_dv.Rows[Education_dv.CurrentRow.Index].Cells[1].Value != null)
             {
                 index = Education_dv.CurrentRow.Index; //current selected index
-                Education foundEducation = Program.DataEducationList.Find(education => education.DESCRIPTION == Education_dv.Rows[index].Cells[6].Value.ToString());
-                foundEducation.RemoveItemFromList();
-                Education_dv.Rows.RemoveAt(index);
+                
+                //polymorphism
+                cvSections found = new Education();
+                found = Program.DataEducationList.Find(education => education.DESCRIPTION == Education_dv.Rows[index].Cells[6].Value.ToString());
+                found.RemoveItemFromList();
+                Education_dv.Rows.RemoveAt(index);            
             }
         }
 
@@ -85,7 +89,6 @@ namespace cvProject.Forms
                 foundEducation.RemoveItemFromList();
                 Education_dv.Rows.RemoveAt(index);
             }
-
         }
         protected void insertInfoToTextBox()
         {

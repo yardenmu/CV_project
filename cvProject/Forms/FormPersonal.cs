@@ -16,7 +16,7 @@ namespace cvProject.Forms
         public FormPersonal()
         {
             InitializeComponent();
-            personal = new PersonalInfo();
+            personal = new PersonalInfo();           
         }
         
         public void setDataTotb()
@@ -26,6 +26,7 @@ namespace cvProject.Forms
             address_tb.Text = Program.per.ADDRESS;
             id_tb.Text = Program.per.ID;
             Email_tb.Text = Program.per.EMAIL;
+            phone_tb.Text = Program.per.PHONE;
             if (Program.per.IMAGEPATH != " ")
             {
                 pictureBox1.Image = System.Drawing.Image.FromFile(Program.per.IMAGEPATH);
@@ -42,9 +43,10 @@ namespace cvProject.Forms
             string address = address_tb.Text;
             string id = id_tb.Text;
             string email = Email_tb.Text;
+            string phone = phone_tb.Text;
             string DateofBirth = dateTimePicker1.Value.ToString("dd-MM-yyyy");
 
-            if (!string.IsNullOrWhiteSpace(firstName) && !string.IsNullOrWhiteSpace(lastName) && !string.IsNullOrWhiteSpace(address) && !string.IsNullOrWhiteSpace(id) && !string.IsNullOrWhiteSpace(email))
+            if (!string.IsNullOrWhiteSpace(firstName) && !string.IsNullOrWhiteSpace(lastName) && !string.IsNullOrWhiteSpace(address) && !string.IsNullOrWhiteSpace(id) && !string.IsNullOrWhiteSpace(email) && !string.IsNullOrWhiteSpace(phone))
             {
                 personal.firstNAME = firstName;
                 personal.LastNAME = lastName;
@@ -52,6 +54,8 @@ namespace cvProject.Forms
                 personal.ID = id;
                 personal.EMAIL = email;
                 personal.dateofBIRTH = DateofBirth;
+                personal.PHONE = phone;
+                personal.IMAGEPATH = Program.per.IMAGEPATH;
                 Program.per = personal;
                 MessageBox.Show("Success");
             }

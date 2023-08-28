@@ -8,10 +8,10 @@ namespace cvProject
 {
     class PersonalInfo : cvComponent
     {
-        protected string FirstName, LastName, DateOfBirth, Email, Adrress;
-        protected string id, imagepath;
+        protected string FirstName, LastName, DateOfBirth, Email, Adrress;  
+        protected string imagepath, id, Phone;
 
-        public PersonalInfo()
+        public PersonalInfo() : base("Personal Information", 1)
         {
             FirstName = " ";
             LastName = " ";
@@ -20,6 +20,18 @@ namespace cvProject
             Adrress = " ";
             id = " ";
             imagepath = " ";
+            Phone = " ";
+        }
+        public PersonalInfo(string FirstName, string LastName, string DateOfBirth, string Email, string Adrress, string id, string title, int displayOrder, string phone, string imagepath) : base(title, displayOrder)
+        {
+            firstNAME = FirstName;
+            LastNAME = LastName;
+            dateofBIRTH = DateOfBirth;
+            EMAIL = Email;
+            ADDRESS = Adrress;
+            ID = id;          
+            PHONE = phone;
+            IMAGEPATH = imagepath;
         }
         public string firstNAME
         {
@@ -65,6 +77,12 @@ namespace cvProject
             get { return imagepath; }
 
             set { this.imagepath = value; }
+        }
+        public string PHONE
+        {
+            get { return Phone; }
+
+            set { this.Phone = value; }
         }
     }
 
