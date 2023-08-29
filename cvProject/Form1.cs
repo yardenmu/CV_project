@@ -11,6 +11,7 @@ using cvProject.Forms;
 using PdfSharp;
 using PdfSharp.Drawing;
 using PdfSharp.Pdf;
+using PdfSharp.Drawing.Layout;
 
 
 namespace cvProject
@@ -93,7 +94,8 @@ namespace cvProject
             pagePosition += 45;
             DrawPng(gfx);
             PesonalPdf(subTitle, fontsubHeadline, text, gfx, page);
-            EducationPdf(subTitle, fontsubHeadline, text, gfx, page, page.Height);         
+            EducationPdf(subTitle, fontsubHeadline, text, gfx, page, page.Height);
+            WorkExpPdf(subTitle, fontsubHeadline, text, gfx, page, page.Height);
 
             cv.Save("C:\\Users\\yarde\\OneDrive\\Desktop\\MyPdfDocument.pdf");
             MessageBox.Show("upload succssesfully");
@@ -154,7 +156,7 @@ namespace cvProject
 
             if (pageHeight - pagePosition == 0)
             {
-
+                
             }
             foreach(Education i in Program.DataEducationList)
             {
@@ -162,8 +164,52 @@ namespace cvProject
                 double pos = gfx.MeasureString(i.STARTDATE + '-' + i.ENDDATE, fontSubtitle).Width;
                 gfx.DrawString(i.DEGREE + " major " + i.MAJOR + " in " + i.INSTITUTION, fontSubtitle, XBrushes.Black, x + pos + tab, pagePosition);
                 pagePosition += fontSubtitle.Height + 5;
-                gfx.DrawString(i.DESCRIPTION, text, XBrushes.Black, x + pos + tab, pagePosition);
+                double space = x + pos + tab;
+                DescriptionHandled(text, gfx, page, space, i.DESCRIPTION);
                 pagePosition += text.Height + 8;
+            }
+        }
+        public void WorkExpPdf(XFont fontSubtitle, XFont fontsubHeadline, XFont text, XGraphics gfx, PdfPage page, double pageHeight)
+        {
+            double x = 30;
+            double tab = 30;
+            headlineSection(fontsubHeadline, gfx, page, "Work Experience");
+            pagePosition += 25;
+
+            if (pageHeight - pagePosition == 0)
+            {
+
+            }
+            foreach (WorkExperience i in Program.DataWorkExperinceList)
+            {
+                gfx.DrawString(i.STARTDATE + '-' + i.ENDDATE, fontSubtitle, XBrushes.Black, x, pagePosition); 
+                double pos = gfx.MeasureString(i.STARTDATE + '-' + i.ENDDATE, fontSubtitle).Width;
+                gfx.DrawString(i.POSITION + " in " + i.COMPANY , fontSubtitle, XBrushes.Black, x + pos + tab, pagePosition);
+                pagePosition += fontSubtitle.Height + 0.5;
+                gfx.DrawString(i.DURATION, new XFont("Century Gothic", 8 ,XFontStyle.Bold), XBrushes.Gray, x + pos + tab, pagePosition);
+                pagePosition += fontSubtitle.Height + 3;
+                double space = x + pos + tab;
+                DescriptionHandled(text, gfx, page, space, i.RESPONSIBILITIES);
+                pagePosition += text.Height + 8;
+            }
+        }
+
+        public void DescriptionHandled( XFont textfont, XGraphics gfx, PdfPage page, double space, string description)
+        {
+            double statpos = space;
+            foreach (string s in description.Split(' ', '\n', '\t', '\r'))
+            {
+                if (page.Width - space < gfx.MeasureString(s, textfont).Width) //Checks if we have reached the end of the page
+                {
+                    pagePosition += textfont.Height + 5;
+                    space = statpos;
+                }
+                if(s != "") 
+                {
+                    gfx.DrawString(s, textfont, XBrushes.Black, space, pagePosition);
+                    space += gfx.MeasureString(s, textfont).Width + 4;
+                }
+               
             }
         }
 

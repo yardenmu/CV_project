@@ -84,21 +84,24 @@ namespace cvProject.Forms
         {
             if (Education_dv.Rows.Count != 1)
             {
-                insertInfoToTextBox();
-                Education foundEducation = Program.DataEducationList.Find(education => education.DESCRIPTION == description_tb.Text.ToString());
+                index = Education_dv.CurrentRow.Index;
+                insertInfoToTextBox(index);
+                //poly
+                cvSections foundEducation = new Education();
+                foundEducation = Program.DataEducationList.Find(education => education.DESCRIPTION == description_tb.Text.ToString());
                 foundEducation.RemoveItemFromList();
                 Education_dv.Rows.RemoveAt(index);
             }
         }
-        protected void insertInfoToTextBox()
-        {
+        protected void insertInfoToTextBox(int index)
+        {            
             institution_tb.Text = Education_dv.Rows[index].Cells[1].Value.ToString();
             degree_tb.Text = Education_dv.Rows[index].Cells[2].Value.ToString();
             major_tb.Text = Education_dv.Rows[index].Cells[3].Value.ToString();
             startDate_tb.Text = Education_dv.Rows[index].Cells[4].Value.ToString();
             endDate_tb.Text = Education_dv.Rows[index].Cells[5].Value.ToString();
             description_tb.Text = Education_dv.Rows[index].Cells[6].Value.ToString();
-
+            
         }
         private void Education_dv_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {

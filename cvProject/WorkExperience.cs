@@ -57,7 +57,13 @@ namespace cvProject
             DateTime endDate = DateTime.ParseExact(enddate, "dd-MM-yyyy", null);
             TimeSpan duration = endDate - startDate;
             int years = duration.Days / 365;
-            int months = (duration.Days % 365) / 30;
+            int months = (duration.Days % 365) / 30;          
+            base.startdate = startDate.Year.ToString();            
+            base.enddate = endDate.Year.ToString();
+            if(years == 0)
+            {
+                return months + " month";
+            }
             return years + " years " + months + " month";
         }
         public override void addToList()

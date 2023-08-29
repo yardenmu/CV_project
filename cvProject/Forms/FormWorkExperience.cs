@@ -66,15 +66,15 @@ namespace cvProject.Forms
             if (WorkExp_dv.Rows.Count != 1)
             {
                 //polymorphism
-                
-                insertToTextBox();
+                index = WorkExp_dv.CurrentRow.Index;
+                insertToTextBox(index);
                 cvSections foundWe = Program.DataWorkExperinceList.Find(workExp => workExp.RESPONSIBILITIES == WorkExp_dv.Rows[index].Cells[4].Value.ToString());
                 foundWe.RemoveItemFromList();
                 WorkExp_dv.Rows.RemoveAt(index);
             }
         }
 
-        protected void insertToTextBox()
+        protected void insertToTextBox(int index)
         {
             company_tb.Text = WorkExp_dv.Rows[index].Cells[1].Value.ToString();
             position_tb.Text = WorkExp_dv.Rows[index].Cells[2].Value.ToString();
@@ -86,7 +86,9 @@ namespace cvProject.Forms
             if (WorkExp_dv.Rows.Count > 0 && WorkExp_dv.Rows[WorkExp_dv.CurrentRow.Index].Cells[1].Value != null)
             {
                 index = WorkExp_dv.CurrentRow.Index; //current selected index
-                WorkExperience foundWe = Program.DataWorkExperinceList.Find(workExp => workExp.RESPONSIBILITIES == WorkExp_dv.Rows[index].Cells[4].Value.ToString());
+                //POLY
+                cvSections foundWe = new WorkExperience();
+                foundWe = Program.DataWorkExperinceList.Find(workExp => workExp.RESPONSIBILITIES == WorkExp_dv.Rows[index].Cells[4].Value.ToString());
                 foundWe.RemoveItemFromList();
                 WorkExp_dv.Rows.RemoveAt(index);
             }
