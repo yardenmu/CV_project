@@ -11,7 +11,7 @@ namespace cvProject
         protected string FirstName, LastName, DateOfBirth, Email, Adrress;  
         protected string imagepath, id, Phone;
 
-        public PersonalInfo() : base("Personal Information", 1)
+        public PersonalInfo() : base("Personal Information", 0)
         {
             FirstName = " ";
             LastName = " ";
@@ -83,6 +83,10 @@ namespace cvProject
             get { return Phone; }
 
             set { this.Phone = value; }
+        }
+        public override void addTocvCompList()
+        {
+            cvList.Add(new cvComponent(base.Title, base.DisplayOrder));
         }
     }
 

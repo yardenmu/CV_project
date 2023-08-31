@@ -42,12 +42,6 @@ namespace cvProject.Forms
             this.description_tb = new System.Windows.Forms.TextBox();
             this.description_lb = new System.Windows.Forms.Label();
             this.Education_dv = new System.Windows.Forms.DataGridView();
-            this.add_btn = new System.Windows.Forms.Button();
-            this.modify_btn = new System.Windows.Forms.Button();
-            this.delete_btn = new System.Windows.Forms.Button();
-            this.startDate_tb = new System.Windows.Forms.TextBox();
-            this.endDate_tb = new System.Windows.Forms.TextBox();
-            this.endDate_lb = new System.Windows.Forms.Label();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -55,6 +49,12 @@ namespace cvProject.Forms
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.add_btn = new System.Windows.Forms.Button();
+            this.modify_btn = new System.Windows.Forms.Button();
+            this.delete_btn = new System.Windows.Forms.Button();
+            this.startDate_tb = new System.Windows.Forms.TextBox();
+            this.endDate_tb = new System.Windows.Forms.TextBox();
+            this.endDate_lb = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.Education_dv)).BeginInit();
             this.SuspendLayout();
             // 
@@ -193,6 +193,52 @@ namespace cvProject.Forms
             this.Education_dv.TabIndex = 12;
             this.Education_dv.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.Education_dv_CellFormatting);
             // 
+            // Column7
+            // 
+            this.Column7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.Column7.HeaderText = "#";
+            this.Column7.MinimumWidth = 8;
+            this.Column7.Name = "Column7";
+            this.Column7.Width = 60;
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Institution";
+            this.Column1.MinimumWidth = 8;
+            this.Column1.Name = "Column1";
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Degree";
+            this.Column2.MinimumWidth = 8;
+            this.Column2.Name = "Column2";
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Major";
+            this.Column3.MinimumWidth = 8;
+            this.Column3.Name = "Column3";
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Start Date";
+            this.Column4.MinimumWidth = 8;
+            this.Column4.Name = "Column4";
+            // 
+            // Column6
+            // 
+            this.Column6.HeaderText = "End Date";
+            this.Column6.MinimumWidth = 8;
+            this.Column6.Name = "Column6";
+            // 
+            // Column5
+            // 
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.Column5.DefaultCellStyle = dataGridViewCellStyle2;
+            this.Column5.HeaderText = "Description";
+            this.Column5.MinimumWidth = 8;
+            this.Column5.Name = "Column5";
+            // 
             // add_btn
             // 
             this.add_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(185)))), ((int)(((byte)(223)))));
@@ -270,52 +316,6 @@ namespace cvProject.Forms
             this.endDate_lb.Size = new System.Drawing.Size(97, 23);
             this.endDate_lb.TabIndex = 17;
             this.endDate_lb.Text = "End Date";
-            // 
-            // Column7
-            // 
-            this.Column7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.Column7.HeaderText = "#";
-            this.Column7.MinimumWidth = 8;
-            this.Column7.Name = "Column7";
-            this.Column7.Width = 60;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Institution";
-            this.Column1.MinimumWidth = 8;
-            this.Column1.Name = "Column1";
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Degree";
-            this.Column2.MinimumWidth = 8;
-            this.Column2.Name = "Column2";
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Major";
-            this.Column3.MinimumWidth = 8;
-            this.Column3.Name = "Column3";
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Start Date";
-            this.Column4.MinimumWidth = 8;
-            this.Column4.Name = "Column4";
-            // 
-            // Column6
-            // 
-            this.Column6.HeaderText = "End Date";
-            this.Column6.MinimumWidth = 8;
-            this.Column6.Name = "Column6";
-            // 
-            // Column5
-            // 
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.Column5.DefaultCellStyle = dataGridViewCellStyle2;
-            this.Column5.HeaderText = "Description";
-            this.Column5.MinimumWidth = 8;
-            this.Column5.Name = "Column5";
             // 
             // FormEducation
             // 

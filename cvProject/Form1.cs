@@ -69,7 +69,7 @@ namespace cvProject
 
         private void skill_btn_Click(object sender, EventArgs e)
         {
-            OpenChildForms(new Forms.FormSkills(), sender);
+            OpenChildForms(new Forms.FormLanguages(), sender);
         }
         //global variable
         double pagePosition = 30;
@@ -96,6 +96,7 @@ namespace cvProject
             PesonalPdf(subTitle, fontsubHeadline, text, gfx, page);
             EducationPdf(subTitle, fontsubHeadline, text, gfx, page, page.Height);
             WorkExpPdf(subTitle, fontsubHeadline, text, gfx, page, page.Height);
+            LanguagePdfXFont(fontsubHeadline, text, gfx, page, page.Height);
 
             cv.Save("C:\\Users\\yarde\\OneDrive\\Desktop\\MyPdfDocument.pdf");
             MessageBox.Show("upload succssesfully");
@@ -114,12 +115,11 @@ namespace cvProject
 
             //need to print all the title in the section
             gfx.DrawString(Title, fontSubtitle, XBrushes.Black, backgroundRect, format);
-            pagePosition += fontSubtitle.Height;
+            pagePosition += fontSubtitle.Height + 25;
         }
         public void PesonalPdf(XFont fontSubtitle, XFont fontsubHeadline, XFont text, XGraphics gfx, PdfPage page)
         {
-            headlineSection(fontsubHeadline, gfx, page, Program.per.TITLE);
-            pagePosition += 25;
+            headlineSection(fontsubHeadline, gfx, page, cvComponent.cvList[0].TITLE);           
             double yFirst = 120; //position of the text 
             double xFirst = 30;  //position of the text  
             double tab = 300;// space for the second col
@@ -151,8 +151,7 @@ namespace cvProject
         {
             double x = 30;
             double tab = 30;
-            headlineSection(fontsubHeadline, gfx, page, "Education");
-            pagePosition += 25;
+            headlineSection(fontsubHeadline, gfx, page, cvComponent.cvList[1].TITLE);            
 
             if (pageHeight - pagePosition == 0)
             {
@@ -173,8 +172,8 @@ namespace cvProject
         {
             double x = 30;
             double tab = 30;
-            headlineSection(fontsubHeadline, gfx, page, "Work Experience");
-            pagePosition += 25;
+            headlineSection(fontsubHeadline, gfx, page, cvComponent.cvList[2].TITLE);
+            
 
             if (pageHeight - pagePosition == 0)
             {
@@ -191,6 +190,36 @@ namespace cvProject
                 double space = x + pos + tab;
                 DescriptionHandled(text, gfx, page, space, i.RESPONSIBILITIES);
                 pagePosition += text.Height + 8;
+            }
+        }
+        public void LanguagePdfXFont(XFont fontsubHeadline, XFont text, XGraphics gfx, PdfPage page, double pageHeight)
+        {
+            headlineSection(fontsubHeadline, gfx, page, cvComponent.cvList[3].TITLE);
+            double x = 30;
+            double space = 20;
+            char bullet = '\u2022';// Unicode bullet character
+            double squareSize = 10;
+            XPen pen = new XPen(XColors.LightBlue);
+            foreach (Language lang in Program.langList)
+            {
+                string title = bullet + "   " + lang.LANGUAGE;                
+                double start = x + (double)'\t'*10  + space;
+                gfx.DrawString(title, text, XBrushes.Black, x, pagePosition);
+                for(int i = 0; i < 5; i++)
+                {
+                    if(i < lang.LEVEL)
+                    {
+                        XRect squareRect = new XRect(start, pagePosition - 8 , squareSize, squareSize);
+                        gfx.DrawRectangle(XBrushes.LightBlue, squareRect);
+                    }
+                    else
+                    {
+                        gfx.DrawRectangle(pen, start, pagePosition - 8, squareSize, squareSize);
+                    }
+                    start += squareSize + 10;
+                }
+                pagePosition += text.Height + 5;    
+                
             }
         }
 

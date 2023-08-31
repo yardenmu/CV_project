@@ -73,11 +73,11 @@
     <Compile Include="Forms\FormPersonal.Designer.cs">
       <DependentUpon>FormPersonal.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\FormSkills.cs">
+    <Compile Include="Forms\FormLanguages.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\FormSkills.Designer.cs">
-      <DependentUpon>FormSkills.cs</DependentUpon>
+    <Compile Include="Forms\FormLanguages.Designer.cs">
+      <DependentUpon>FormLanguages.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\FormWorkExperience.cs">
       <SubType>Form</SubType>
@@ -85,6 +85,7 @@
     <Compile Include="Forms\FormWorkExperience.Designer.cs">
       <DependentUpon>FormWorkExperience.cs</DependentUpon>
     </Compile>
+    <Compile Include="Language.cs" />
     <Compile Include="PersonalInfo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -98,8 +99,8 @@
     <EmbeddedResource Include="Forms\FormPersonal.resx">
       <DependentUpon>FormPersonal.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FormSkills.resx">
-      <DependentUpon>FormSkills.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\FormLanguages.resx">
+      <DependentUpon>FormLanguages.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormWorkExperience.resx">
       <DependentUpon>FormWorkExperience.cs</DependentUpon>

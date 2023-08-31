@@ -15,6 +15,6 @@ C:\Users\yarde\source\repos\CPP\cvProject\cvProject\bin\Debug\de\PdfSharp.resour
 C:\Users\yarde\source\repos\CPP\cvProject\cvProject\bin\Debug\de\PdfSharp.Charting.resources.dll
 C:\Users\yarde\source\repos\CPP\cvProject\cvProject\obj\Debug\cvProject.cvProject.resources
 C:\Users\yarde\source\repos\CPP\cvProject\cvProject\obj\Debug\cvProject.Forms.FormPersonal.resources
-C:\Users\yarde\source\repos\CPP\cvProject\cvProject\obj\Debug\cvProject.Forms.FormSkills.resources
 C:\Users\yarde\source\repos\CPP\cvProject\cvProject\obj\Debug\cvProject.Forms.FormEducation.resources
 C:\Users\yarde\source\repos\CPP\cvProject\cvProject\obj\Debug\cvProject.Forms.FormWorkExperience.resources
+C:\Users\yarde\source\repos\CPP\cvProject\cvProject\obj\Debug\cvProject.Forms.FormLanguages.resources

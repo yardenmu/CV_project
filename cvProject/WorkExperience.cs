@@ -14,17 +14,16 @@ namespace cvProject
             Company = " ";
             Position = " ";
             Responsibilities = " ";
-            Duration = " ";
-            SetTitleAndOrder("Work Experience", 3);
+            Duration = " ";            
         }
         public WorkExperience(string index, string Company, string Position, string startdate, string enddate, string Responsibilities, string Duration) : base(startdate, enddate, index)
         {
             COMPANY = Company;
             POSITION = Position;
             RESPONSIBILITIES = Responsibilities;
-            DURATION = Duration;
-            SetTitleAndOrder("Work Experience", 3);
+            DURATION = Duration;            
         }
+        
         public string COMPANY
         {
             get { return Company; }

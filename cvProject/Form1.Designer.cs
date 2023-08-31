@@ -118,7 +118,7 @@ namespace cvProject
             this.skill_btn.Name = "skill_btn";
             this.skill_btn.Size = new System.Drawing.Size(256, 89);
             this.skill_btn.TabIndex = 4;
-            this.skill_btn.Text = "Skills";
+            this.skill_btn.Text = "Languages";
             this.skill_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.skill_btn.UseVisualStyleBackColor = true;
             this.skill_btn.Click += new System.EventHandler(this.skill_btn_Click);
@@ -252,9 +252,6 @@ namespace cvProject
             // 
             // panelDesktop
             // 
-            this.panelDesktop.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.panelDesktop.AutoSize = true;
             this.panelDesktop.Location = new System.Drawing.Point(256, 69);
             this.panelDesktop.Name = "panelDesktop";

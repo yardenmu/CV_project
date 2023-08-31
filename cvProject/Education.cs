@@ -13,16 +13,14 @@ namespace cvProject
         {
             institution = "";
             degree = "";
-            major = "";
-            SetTitleAndOrder("Education", 2);
+            major = "";            
         }
         public Education(string institution, string degree, string major, string description, string startdate, string enddate, string index) : base(startdate, enddate, index)
         {
             INSTITUTION = institution;
             DEGREE = degree;
             MAJOR = major;
-            DESCRIPTION = description;
-            SetTitleAndOrder("Education", 2);
+            DESCRIPTION = description;            
         }
         public override void addToList()
         {

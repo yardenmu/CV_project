@@ -12,11 +12,13 @@ namespace cvProject.Forms
 {
     public partial class FormPersonal : Form
     {
-        PersonalInfo personal;
+        PersonalInfo personal = new PersonalInfo();
         public FormPersonal()
         {
-            InitializeComponent();
-            personal = new PersonalInfo();           
+            InitializeComponent();            
+            cvComponent cvObj = new PersonalInfo();
+            //Polymorphism
+            cvObj.addTocvCompList();
         }
         
         public void setDataTotb()

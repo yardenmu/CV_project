@@ -10,7 +10,8 @@ namespace cvProject
     static class Program
     {
         public static List<Education> DataEducationList = new List<Education>();
-        public static List<WorkExperience> DataWorkExperinceList = new List<WorkExperience>();       
+        public static List<WorkExperience> DataWorkExperinceList = new List<WorkExperience>();
+        public static List<Language> langList = new List<Language>();
         public static PersonalInfo per = new PersonalInfo();
         public static Boolean checkValidInputName(string str)
         {

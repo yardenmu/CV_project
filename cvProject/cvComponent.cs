@@ -11,7 +11,7 @@ namespace cvProject
     {
         protected string Title;
         protected int DisplayOrder;
-        protected static List<cvComponent> cvList = new List<cvComponent>();
+        public static List<cvComponent> cvList = new List<cvComponent>();
       
         public cvComponent()
         {
@@ -22,6 +22,7 @@ namespace cvProject
         {
             TITLE = title;
             DISPLAYTORDER = index;
+            
         }
        
         public string TITLE
@@ -33,6 +34,11 @@ namespace cvProject
         {
             get { return DisplayOrder; }
             set { this.DisplayOrder = value; }
+        }
+
+        public virtual void addTocvCompList()
+        {
+
         }
 
     }

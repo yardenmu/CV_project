@@ -10,7 +10,7 @@ namespace cvProject
     class cvSections : cvComponent
     {        
         protected string startdate, enddate, index;
-        public cvSections() :base()
+        public cvSections() 
         {
             startdate = "";
             enddate = "";
@@ -26,12 +26,19 @@ namespace cvProject
 
         public virtual void RemoveItemFromList() { }
 
-        protected void SetTitleAndOrder(string title, int order)
+        public void SetTitleAndOrder(string title, int order)
         {
-            base.Title = title;
-            base.DisplayOrder = order;          
+            //Polymorphism
+            cvComponent cvObj = new cvSections();
+            cvObj.TITLE = title;
+            cvObj.DISPLAYTORDER = order;
+            cvObj.addTocvCompList();
         }
-       
+        public override void addTocvCompList()
+        {
+            cvList.Add(new cvComponent(Title, base.DisplayOrder));
+        }
+
         //properties
         public string STARTDATE
         {

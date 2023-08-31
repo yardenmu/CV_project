@@ -12,12 +12,12 @@ namespace cvProject.Forms
 {
     public partial class FormWorkExperience : Form
     {
-        WorkExperience workExp;
+        WorkExperience workExp = new WorkExperience();
         int index;
         public FormWorkExperience()
         {
             InitializeComponent();
-            workExp = new WorkExperience();
+            workExp.SetTitleAndOrder("Work Experience", 2);
             WorkExp_dv.ReadOnly = true;
         }
         public void SetWorkExpList()

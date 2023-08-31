@@ -12,12 +12,13 @@ namespace cvProject.Forms
 {
     public partial class FormEducation : Form
     {
-        Education education;
+        Education education = new Education();
         int index;
         public FormEducation()
         {
             InitializeComponent();
             Education_dv.ReadOnly = true;
+            education.SetTitleAndOrder("Education", 1);
         }
         public void SetEducationList()
         {
