@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace cvProject
 {
+    [Serializable]
     class Language:cvComponent
     {
         protected string language;

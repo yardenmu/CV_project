@@ -49,6 +49,9 @@ namespace cvProject
             this.time_lbl = new System.Windows.Forms.Label();
             this.panelDesktop = new System.Windows.Forms.Panel();
             this.pdf_pb = new System.Windows.Forms.PictureBox();
+            this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
+            this.saveP_btn = new System.Windows.Forms.Button();
+            this.load_btn = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -269,12 +272,44 @@ namespace cvProject
             this.pdf_pb.TabStop = false;
             this.pdf_pb.Click += new System.EventHandler(this.pdf_pb_Click);
             // 
+            // saveP_btn
+            // 
+            this.saveP_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(185)))), ((int)(((byte)(223)))));
+            this.saveP_btn.FlatAppearance.BorderSize = 0;
+            this.saveP_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.saveP_btn.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.saveP_btn.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.saveP_btn.Location = new System.Drawing.Point(509, 13);
+            this.saveP_btn.Name = "saveP_btn";
+            this.saveP_btn.Size = new System.Drawing.Size(152, 36);
+            this.saveP_btn.TabIndex = 31;
+            this.saveP_btn.Text = "Save Project";
+            this.saveP_btn.UseVisualStyleBackColor = false;
+            this.saveP_btn.Click += new System.EventHandler(this.saveP_btn_Click);
+            // 
+            // load_btn
+            // 
+            this.load_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(123)))), ((int)(((byte)(185)))), ((int)(((byte)(223)))));
+            this.load_btn.FlatAppearance.BorderSize = 0;
+            this.load_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.load_btn.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.load_btn.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.load_btn.Location = new System.Drawing.Point(725, 13);
+            this.load_btn.Name = "load_btn";
+            this.load_btn.Size = new System.Drawing.Size(143, 36);
+            this.load_btn.TabIndex = 32;
+            this.load_btn.Text = "Load Project";
+            this.load_btn.UseVisualStyleBackColor = false;
+            this.load_btn.Click += new System.EventHandler(this.load_btn_Click);
+            // 
             // cvProject
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1175, 652);
+            this.Controls.Add(this.load_btn);
+            this.Controls.Add(this.saveP_btn);
             this.Controls.Add(this.pdf_pb);
             this.Controls.Add(this.panelDesktop);
             this.Controls.Add(this.time_lbl);
@@ -315,6 +350,9 @@ namespace cvProject
         private System.Windows.Forms.Label time_lbl;
         private System.Windows.Forms.Panel panelDesktop;
         private System.Windows.Forms.PictureBox pdf_pb;
+        private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog1;
+        private System.Windows.Forms.Button saveP_btn;
+        private System.Windows.Forms.Button load_btn;
     }
 }
 

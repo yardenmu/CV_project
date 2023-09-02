@@ -20,7 +20,7 @@ namespace cvProject.Forms
             //Polymorphism
             cvObj.addTocvCompList();
         }
-        
+
         public void setDataTotb()
         {
             firstName_tb.Text = Program.per.firstNAME;

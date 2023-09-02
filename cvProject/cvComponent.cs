@@ -7,6 +7,7 @@ using System.Windows.Forms;
 
 namespace cvProject
 {
+    [Serializable]
     class cvComponent
     {
         protected string Title;

@@ -6,7 +6,7 @@ using System.Windows.Forms;
 
 namespace cvProject
 {
-
+    [Serializable]
     static class Program
     {
         public static List<Education> DataEducationList = new List<Education>();

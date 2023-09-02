@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace cvProject
 {
+    [Serializable]
     class WorkExperience : cvSections
     {
         protected string Company, Position, Responsibilities, Duration;

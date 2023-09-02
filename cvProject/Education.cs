@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace cvProject
 {
+    [Serializable]
     class Education : cvSections
     {
         protected string institution, degree, major, description; 

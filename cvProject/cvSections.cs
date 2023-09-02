@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace cvProject
 {
-    
+    [Serializable]
     class cvSections : cvComponent
     {        
         protected string startdate, enddate, index;
