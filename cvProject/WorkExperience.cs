@@ -53,13 +53,13 @@ namespace cvProject
 
         public string calculateDurationDate()
         {
-            DateTime startDate = DateTime.ParseExact(startdate, "dd-MM-yyyy", null);
-            DateTime endDate = DateTime.ParseExact(enddate, "dd-MM-yyyy", null);
-            TimeSpan duration = endDate - startDate;
+            DateTime STARTdate = DateTime.ParseExact(startdate, "dd-MM-yyyy", null);
+            DateTime ENDdate = DateTime.ParseExact(enddate, "dd-MM-yyyy", null);
+            TimeSpan duration = ENDdate - STARTdate;
             int years = duration.Days / 365;
             int months = (duration.Days % 365) / 30;          
-            base.startdate = startDate.Year.ToString();            
-            base.enddate = endDate.Year.ToString();
+            base.startdate = STARTdate.Year.ToString();            
+            base.enddate = ENDdate.Year.ToString();
             if(years == 0)
             {
                 return months + " month";

@@ -1,7 +1,6 @@
 C:\Users\yarde\source\repos\CPP\cvProject\cvProject\bin\Debug\cvProject.exe.config
 C:\Users\yarde\source\repos\CPP\cvProject\cvProject\bin\Debug\cvProject.exe
 C:\Users\yarde\source\repos\CPP\cvProject\cvProject\bin\Debug\cvProject.pdb
-C:\Users\yarde\source\repos\CPP\cvProject\cvProject\obj\Debug\cvProject.csproj.AssemblyReference.cache
 C:\Users\yarde\source\repos\CPP\cvProject\cvProject\obj\Debug\cvProject.Properties.Resources.resources
 C:\Users\yarde\source\repos\CPP\cvProject\cvProject\obj\Debug\cvProject.csproj.GenerateResource.cache
 C:\Users\yarde\source\repos\CPP\cvProject\cvProject\obj\Debug\cvProject.csproj.CoreCompileInputs.cache
@@ -18,3 +17,4 @@ C:\Users\yarde\source\repos\CPP\cvProject\cvProject\obj\Debug\cvProject.Forms.Fo
 C:\Users\yarde\source\repos\CPP\cvProject\cvProject\obj\Debug\cvProject.Forms.FormEducation.resources
 C:\Users\yarde\source\repos\CPP\cvProject\cvProject\obj\Debug\cvProject.Forms.FormWorkExperience.resources
 C:\Users\yarde\source\repos\CPP\cvProject\cvProject\obj\Debug\cvProject.Forms.FormLanguages.resources
+C:\Users\yarde\source\repos\CPP\cvProject\cvProject\obj\Debug\cvProject.csproj.AssemblyReference.cache

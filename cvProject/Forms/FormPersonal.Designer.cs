@@ -137,7 +137,7 @@ namespace cvProject.Forms
             // pictureBox1
             // 
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.Location = new System.Drawing.Point(532, 243);
+            this.pictureBox1.Location = new System.Drawing.Point(561, 243);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(215, 151);
             this.pictureBox1.TabIndex = 8;
@@ -150,7 +150,7 @@ namespace cvProject.Forms
             this.load_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.load_btn.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.load_btn.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.load_btn.Location = new System.Drawing.Point(562, 422);
+            this.load_btn.Location = new System.Drawing.Point(591, 422);
             this.load_btn.Name = "load_btn";
             this.load_btn.Size = new System.Drawing.Size(147, 45);
             this.load_btn.TabIndex = 9;

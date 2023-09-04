@@ -54,7 +54,7 @@ namespace cvProject
         {
             FormPersonal formPersonal = new FormPersonal();
             OpenChildForms(formPersonal, sender);           
-           formPersonal.setDataTotb();
+            formPersonal.setDataTotb();
         }
 
         private void education_btn_Click(object sender, EventArgs e)
@@ -81,8 +81,7 @@ namespace cvProject
         static List<PdfPage> pages = new List<PdfPage>();
         static int countPages = 0;
         static XGraphics gfx;
-        //static PdfPage page = cv.AddPage();
-
+        
         private void pdf_pb_Click(object sender, EventArgs e)
         {
             if (Program.DataEducationList.Count == 0 || Program.DataWorkExperinceList.Count == 0 || Program.langList.Count == 0 || Program.per.ID == "")
@@ -134,7 +133,7 @@ namespace cvProject
                 return selectedPdfpath;
             }
         }
-        public void headlineSection(XFont fontSubtitle, XGraphics gfx, PdfPage page, string Title)
+        public void headlineSection(XFont fontSubtitle, PdfPage page, string Title)
         {
             // Create a background rectangle for the banner
             XRect backgroundRect = new XRect(0, pagePosition, page.Width, 20);
@@ -146,13 +145,14 @@ namespace cvProject
             format.Alignment = XStringAlignment.Center;
             format.LineAlignment = XLineAlignment.Center;
 
-            //need to print all the title in the section
+            
             gfx.DrawString(Title, fontSubtitle, XBrushes.Black, backgroundRect, format);
             pagePosition += fontSubtitle.Height + 25;
         }
         public void PesonalPdf(XFont fontSubtitle, XFont fontsubHeadline, XFont text, PdfPage page, PdfDocument cv)
-        {
-            headlineSection(fontsubHeadline, gfx, page, cvComponent.cvList[0].TITLE);
+        {            
+            int index = cvComponent.cvList.FindIndex(item => item.DISPLAYTORDER == 0);
+            headlineSection(fontsubHeadline, page, cvComponent.cvList[index].TITLE);
             double yFirst = 120; //position of the text 
             double xFirst = 30;  //position of the text  
             double tab = 300;// space for the second col
@@ -184,7 +184,8 @@ namespace cvProject
         {
             double x = 30;
             double tab = 30;
-            headlineSection(fontsubHeadline, gfx, page, cvComponent.cvList[1].TITLE);
+            int index = cvComponent.cvList.FindIndex(item => item.DISPLAYTORDER == 1);
+            headlineSection(fontsubHeadline, page, cvComponent.cvList[index].TITLE);
             CheckHeightPage(page.Height);
             foreach (Education i in Program.DataEducationList)
             {
@@ -202,8 +203,8 @@ namespace cvProject
         {
             double x = 30;
             double tab = 30;
-            headlineSection(fontsubHeadline, gfx, page, cvComponent.cvList[2].TITLE);
-
+            int index = cvComponent.cvList.FindIndex(item => item.DISPLAYTORDER == 2);
+            headlineSection(fontsubHeadline, page, cvComponent.cvList[index].TITLE);
 
             CheckHeightPage(pageHeight);
             foreach (WorkExperience i in Program.DataWorkExperinceList)
@@ -222,7 +223,8 @@ namespace cvProject
         }
         public void LanguagePdfXFont(XFont fontsubHeadline, XFont text, PdfPage page, double pageHeight, PdfDocument cv)
         {
-            headlineSection(fontsubHeadline, gfx, page, cvComponent.cvList[3].TITLE);
+            int index = cvComponent.cvList.FindIndex(item => item.DISPLAYTORDER == 3);
+            headlineSection(fontsubHeadline, page, cvComponent.cvList[index].TITLE);
             double x = 30;
             double space = 20;
             char bullet = '\u2022';// Unicode bullet character
@@ -254,11 +256,11 @@ namespace cvProject
 
         public void DescriptionHandled(XFont textfont, PdfPage page, double space, string description)
         {
-            double statpos = space;
+            double statpos = space;         
             CheckHeightPage(page.Height);
             foreach (string s in description.Split(' ', '\n', '\t', '\r'))
             {
-                if (page.Width - space < gfx.MeasureString(s, textfont).Width) //Checks if we have reached the end of the page
+                if (page.Width - space - 30 < gfx.MeasureString(s, textfont).Width) //Checks if we have reached the end of the line
                 {
                     pagePosition += textfont.Height + 5;
                     space = statpos;
@@ -275,24 +277,26 @@ namespace cvProject
 
         void DrawPng(XGraphics gfx)
         {
-            if (Program.per.IMAGEPATH != " ")
+            if (Program.per.IMAGEPATH != "")
             {
                 XImage image = XImage.FromFile(Program.per.IMAGEPATH);
                 double imageWidth = 65;
                 double imageHeight = 65;
                 gfx.DrawImage(image, 30, 5, imageWidth, imageHeight);
-            }
+            }           
 
         }
 
         private void saveP_btn_Click(object sender, EventArgs e)
         {
+            
+            SaveFileDialog saveFileDialog1 = new SaveFileDialog();
+            saveFileDialog1.InitialDirectory = Directory.GetCurrentDirectory();// + "..\\myModels";
+            saveFileDialog1.Filter = "model files (*.mdl)|*.mdl|All files (*.*)|*.*";
+            saveFileDialog1.FilterIndex = 1;
+            saveFileDialog1.RestoreDirectory = true;
+            try
             {
-                SaveFileDialog saveFileDialog1 = new SaveFileDialog();
-                saveFileDialog1.InitialDirectory = Directory.GetCurrentDirectory();// + "..\\myModels";
-                saveFileDialog1.Filter = "model files (*.mdl)|*.mdl|All files (*.*)|*.*";
-                saveFileDialog1.FilterIndex = 1;
-                saveFileDialog1.RestoreDirectory = true;
                 if (saveFileDialog1.ShowDialog() == DialogResult.OK)
                 {
                     IFormatter formatter = new BinaryFormatter();
@@ -303,32 +307,50 @@ namespace cvProject
                         formatter.Serialize(stream, Program.DataEducationList);
                         formatter.Serialize(stream, Program.DataWorkExperinceList);
                         formatter.Serialize(stream, Program.langList);
+                        formatter.Serialize(stream, cvComponent.cvList);
                     }
                 }
             }
+                
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occurred:" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }           
+            
         }
 
         private void load_btn_Click(object sender, EventArgs e)
         {
+            
             OpenFileDialog openFileDialog1 = new OpenFileDialog();
             openFileDialog1.InitialDirectory = Directory.GetCurrentDirectory();// + "..\\myModels";
             openFileDialog1.Filter = "model files (*.mdl)|*.mdl|All files (*.*)|*.*";
             openFileDialog1.FilterIndex = 1;
             openFileDialog1.RestoreDirectory = true;
-            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            try
             {
-                Stream stream = File.Open(openFileDialog1.FileName, FileMode.Open);
-                var binaryFormatter = new System.Runtime.Serialization.Formatters.Binary.BinaryFormatter();
-                Program.per = (PersonalInfo)binaryFormatter.Deserialize(stream);
-                Program.DataEducationList = (List<Education>)binaryFormatter.Deserialize(stream);
-                Program.DataWorkExperinceList = (List<WorkExperience>)binaryFormatter.Deserialize(stream);
-                Program.langList = (List<Language>)binaryFormatter.Deserialize(stream);
+                if (openFileDialog1.ShowDialog() == DialogResult.OK)
+                {
+                    Stream stream = File.Open(openFileDialog1.FileName, FileMode.Open);
+                    var binaryFormatter = new System.Runtime.Serialization.Formatters.Binary.BinaryFormatter();
+
+                    Program.per = (PersonalInfo)binaryFormatter.Deserialize(stream);
+                    Program.DataEducationList = (List<Education>)binaryFormatter.Deserialize(stream);
+                    Program.DataWorkExperinceList = (List<WorkExperience>)binaryFormatter.Deserialize(stream);
+                    Program.langList = (List<Language>)binaryFormatter.Deserialize(stream);
+                    cvComponent.cvList = (List<cvComponent>)binaryFormatter.Deserialize(stream);
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occurred:" + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         private void CheckHeightPage(double pageHeight)
         {
-            if (pageHeight - pagePosition <= 0)
+            if (pageHeight - pagePosition <= 30)
             {
                 PdfPage newPage = cv.AddPage();
                 pages.Add(newPage);

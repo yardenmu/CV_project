@@ -17,7 +17,7 @@ namespace cvProject.Forms
         public FormEducation()
         {
             InitializeComponent();
-            Education_dv.ReadOnly = true;
+            Education_dv.ReadOnly = true;            
             education.SetTitleAndOrder("Education", 1);
         }
         public void SetEducationList()
@@ -43,13 +43,12 @@ namespace cvProject.Forms
 
             if (Program.checkValidInputName(institution) && Program.checkValidInputName(degree)
                 && Program.checkValidInputName(major) && !string.IsNullOrWhiteSpace(description) &&
-               Program.checkValidInputNumeric(startDate) && Program.checkValidInputNumeric(EndDate)) // change to function get object(template)
+               Program.checkValidInputNumeric(startDate) && Program.checkValidInputNumeric(EndDate) && startDate.Length == 4 && EndDate.Length == 4) // change to function get object(template)
             {
                 index = Education_dv.Rows.Count.ToString();
                 education = new Education(institution, degree, major, description, startDate, EndDate, index);
                 Education_dv.Rows.Add(Education_dv.Rows.Count, education.INSTITUTION, education.DEGREE, education.MAJOR, education.STARTDATE, education.ENDDATE, education.DESCRIPTION);
                 education.addToList();
-
             }
             else
             {
@@ -68,26 +67,30 @@ namespace cvProject.Forms
         }
         private void delete_btn_Click(object sender, EventArgs e)
         {
+           
             //                                       check if the the current selected row value is empty
             if (Education_dv.Rows.Count > 0 && Education_dv.Rows[Education_dv.CurrentRow.Index].Cells[1].Value != null)
             {
                 index = Education_dv.CurrentRow.Index; //current selected index
-                
+
                 //polymorphism
                 cvSections found = new Education();
                 found = Program.DataEducationList.Find(education => education.DESCRIPTION == Education_dv.Rows[index].Cells[6].Value.ToString());
                 found.RemoveItemFromList();
-                Education_dv.Rows.RemoveAt(index);            
-            }
+                Education_dv.Rows.RemoveAt(index);               
+            }           
+                  
         }
+        
 
         private void modify_btn_Click(object sender, EventArgs e)
         {
+
             if (Education_dv.Rows.Count != 1)
             {
                 index = Education_dv.CurrentRow.Index;
                 insertInfoToTextBox(index);
-                //poly
+                //polymorphism
                 cvSections foundEducation = new Education();
                 foundEducation = Program.DataEducationList.Find(education => education.DESCRIPTION == description_tb.Text.ToString());
                 foundEducation.RemoveItemFromList();
@@ -101,9 +104,9 @@ namespace cvProject.Forms
             major_tb.Text = Education_dv.Rows[index].Cells[3].Value.ToString();
             startDate_tb.Text = Education_dv.Rows[index].Cells[4].Value.ToString();
             endDate_tb.Text = Education_dv.Rows[index].Cells[5].Value.ToString();
-            description_tb.Text = Education_dv.Rows[index].Cells[6].Value.ToString();
-            
+            description_tb.Text = Education_dv.Rows[index].Cells[6].Value.ToString();            
         }
+        //show the number in dataGridView for each row
         private void Education_dv_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
             Education_dv.Rows[e.RowIndex].Cells[0].Value = e.RowIndex + 1;

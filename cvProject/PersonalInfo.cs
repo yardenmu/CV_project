@@ -14,14 +14,14 @@ namespace cvProject
 
         public PersonalInfo() : base("Personal Information", 0)
         {
-            FirstName = " ";
-            LastName = " ";
-            DateOfBirth = " ";
-            Email = " ";
-            Adrress = " ";
-            id = " ";
-            imagepath = " ";
-            Phone = " ";
+            FirstName = "";
+            LastName = "";
+            DateOfBirth = "";
+            Email = "";
+            Adrress = "";
+            id = "";
+            imagepath = "";
+            Phone = "";
         }
         public PersonalInfo(string FirstName, string LastName, string DateOfBirth, string Email, string Adrress, string id, string title, int displayOrder, string phone, string imagepath) : base(title, displayOrder)
         {

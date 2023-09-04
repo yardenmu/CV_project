@@ -18,7 +18,8 @@ namespace cvProject.Forms
             RestoreForm();
             //Polymorphism
             cvComponent cvObj = new Language();
-            cvObj.addTocvCompList();
+            if (!cvObj.checkIfObjectInTheList())
+                cvObj.addTocvCompList();
         }
         
         int Count = 1;
@@ -75,7 +76,7 @@ namespace cvProject.Forms
 
         private void save_btn_Click(object sender, EventArgs e)
         {
-            if(!string.IsNullOrEmpty(lang_tb.Text) && levelLang_cb.SelectedIndex != -1)
+            if(Program.checkValidInputName(lang_tb.Text) && levelLang_cb.SelectedIndex != -1 && Program.langList.Count == 0)
             {
                 Language language = new Language(lang_tb.Text, int.Parse(levelLang_cb.SelectedItem.ToString()), "Language", 4);
                 Program.langList.Add(language);
@@ -88,10 +89,12 @@ namespace cvProject.Forms
             {
                 for (int i = 1; i < Count; i++)
                 {
-                    if (!string.IsNullOrEmpty(tbList[i].Text) && cbList[i].SelectedIndex != -1)
+                    if (Program.checkValidInputName(tbList[i].Text) && cbList[i].SelectedIndex != -1)
                     {
                         Language language = new Language(tbList[i].Text, int.Parse(cbList[i].SelectedItem.ToString()), "Language", 4);
-                        Program.langList.Add(language);
+                        //check if the object is allready in the list
+                        if(Program.langList.FindIndex(item => item.LANGUAGE == language.LANGUAGE) == -1)
+                            Program.langList.Add(language);
                     }
                 }
             }

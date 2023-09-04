@@ -27,16 +27,17 @@ namespace cvProject
         public virtual void RemoveItemFromList() { }
 
         public void SetTitleAndOrder(string title, int order)
-        {
+        {            
             //Polymorphism
-            cvComponent cvObj = new cvSections();
+            cvComponent cvObj = new cvSections();           
             cvObj.TITLE = title;
             cvObj.DISPLAYTORDER = order;
-            cvObj.addTocvCompList();
+            if(!cvObj.checkIfObjectInTheList())
+                cvObj.addTocvCompList();
         }
         public override void addTocvCompList()
         {
-            cvList.Add(new cvComponent(Title, base.DisplayOrder));
+            cvList.Add(new cvComponent(Title, base.DisplayOrder));            
         }
 
         //properties

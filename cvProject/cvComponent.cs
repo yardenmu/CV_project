@@ -13,17 +13,25 @@ namespace cvProject
         protected string Title;
         protected int DisplayOrder;
         public static List<cvComponent> cvList = new List<cvComponent>();
-      
+        
         public cvComponent()
         {
             Title = " ";
-            DisplayOrder = 1;
+            DisplayOrder = 0;
         }
         public cvComponent(string title, int index)
         {
             TITLE = title;
-            DISPLAYTORDER = index;
-            
+            DISPLAYTORDER = index;            
+        }
+        public bool checkIfObjectInTheList()
+        {
+            foreach (cvComponent cv in cvComponent.cvList)
+            {
+                if (cv.TITLE == this.TITLE)
+                    return true;                
+            }
+            return false;
         }
        
         public string TITLE
